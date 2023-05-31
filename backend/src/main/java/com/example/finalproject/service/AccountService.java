@@ -13,4 +13,8 @@ public class AccountService {
     public String create(AccountDto accountDto) {
         return accountRepository.create(accountDto);
     }
+
+    public String get(Long id) {
+        return accountRepository.get(id);
+    }
 }

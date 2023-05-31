@@ -4,4 +4,5 @@ import com.example.finalproject.dto.AccountDto;
 
 public interface AccountRepository {
     public String create(AccountDto accountDto);
+    public String get(Long id);
 }

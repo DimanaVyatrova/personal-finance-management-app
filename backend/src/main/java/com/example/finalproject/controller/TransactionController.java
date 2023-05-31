@@ -2,26 +2,28 @@ package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.TransactionDto;
 import com.example.finalproject.model.Transaction;
+import com.example.finalproject.service.TransactionService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
+@AllArgsConstructor
 @RestController
 @RequestMapping("transactions")
 public class TransactionController {
+    TransactionService transactionService;
 
-    //връща транзакциите за акаунт със съответното id
     @GetMapping("{id}")
     //List<TransactionDto>
-    public String getTransactions() {
-        return "Opita se :(";
+    public String getTransactionById(@PathVariable Long id) {
+        return transactionService.get(id);
     }
 
-    //добавя транзакция към акаунт със съответното id
-    @PostMapping("{id}")
-    public Long addTransaction (@RequestBody TransactionDto transactionDto) {
-        return 0L;
+    @PostMapping()
+    public String addTransaction (@RequestBody TransactionDto transactionDto) {
+        return transactionService.create(transactionDto);
     }
 }
