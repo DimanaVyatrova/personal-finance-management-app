@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "2904f9f8-b0d9-4106-8a99-4274cff09142",
+		"name": "User-CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26781612"
+	},
+	"item": [
+		{
+			"name": "Find_User_By_Username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/users/ivan"
+			},
+			"response": []
+		},
+		{
+			"name": "Create_User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ivan@abv.bg\",\r\n    \"password\": \"ivankaaa\",\r\n    \"username\": \"ivan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users"
+			},
+			"response": []
+		}
+	]
+}
