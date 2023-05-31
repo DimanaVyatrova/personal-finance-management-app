@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "0cca14dc-a75d-47af-87a1-9134481d98b7",
+		"name": "Final Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20561999"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"email\": \"adb@a.a\",\r\n    \"password\": \"123456\",\r\n    \"username\" : \"anon\",\r\n    \"profile_picture\": null\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/budgets",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"currentAmount\": 0,\r\n    \"limitAmount\": 1000,\r\n    \"name\": \"food\",\r\n    \"periodEnd\": \"2023-04-05\",\r\n    \"periodStart\": \"2023-03-05\",\r\n    \"reccuringPeriod\": \"monthly\",\r\n    \"userId\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/budgets",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"budgets"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
