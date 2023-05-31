@@ -1,11 +1,8 @@
 package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.TransactionDto;
-import com.example.finalproject.model.Transaction;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Slf4j
 @RestController

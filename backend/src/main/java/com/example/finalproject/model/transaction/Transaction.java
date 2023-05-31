@@ -1,5 +1,7 @@
-package com.example.finalproject.model;
+package com.example.finalproject.model.transaction;
 
+import com.example.finalproject.model.Category;
+import com.example.finalproject.model.RecurringPeriod;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -17,35 +19,29 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
-@Table(name = "budgets")
 @Data
-public class Budget {
+@Table(name="transactions")
+public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
-
-    @OneToMany(mappedBy = "budget")
-    private Set<Category> categories;
+    @Column(nullable = false)
+    private LocalDate createdAt;
 
     @Column(nullable = false)
-    private LocalDate periodStart;
+    private Long amount;
 
-    @Column(nullable = false)
-    private LocalDate periodEnd;
+    @Column
+    private String transactionParty;
 
-    @Column(nullable = false)
-    private Double limitAmount;
-
-    @Column(nullable = false)
-    private Double currentAmount;
-
-    @Column(nullable = false)
-    private String name;
+    @OneToMany(mappedBy = "transaction")
+    private Set<TransactionAccount> transactionAccounts;
 
     @Enumerated(EnumType.STRING)
-    private RecurringPeriod recurringPeriod;
+    private RecurringPeriod period;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }

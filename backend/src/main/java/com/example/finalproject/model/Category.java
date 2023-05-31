@@ -1,6 +1,6 @@
 package com.example.finalproject.model;
 
-import com.example.finalproject.model.transaction.TransactionAccount;
+import com.example.finalproject.model.transaction.Transaction;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,20 +15,21 @@ import lombok.Data;
 import java.util.Set;
 
 @Entity
+@Table(name = "categories")
 @Data
-@Table(name = "accounts")
-public class Account {
+public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false)
-    private Double balance;
+    @Column(nullable = false, unique = true)
+    private String name;
 
     @ManyToOne
-    @JoinColumn(name="user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "budget_id", nullable = false)
+    private Budget budget;
 
-    @OneToMany(mappedBy = "account")
-    private Set<TransactionAccount> transactionAccounts;
+    @OneToMany(mappedBy = "category")
+    private Set<Transaction> transactions;
 }
