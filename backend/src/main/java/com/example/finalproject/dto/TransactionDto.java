@@ -9,11 +9,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class TransactionDto {
     private Long id;
-    private Long accountId;
-    private String type;
-    private LocalDate createdAt;
     private Long amount;
-    private Long reccuringId;
-    private String stakeholder;
-    private String category;
+    private LocalDate createdAt;
+    private String period;
+    private String transactionParty;
+    private Long categoryId;
 }

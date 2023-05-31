@@ -11,7 +11,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -19,6 +22,9 @@ import java.util.Set;
 @Entity
 @Table(name = "budgets")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Budget {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
