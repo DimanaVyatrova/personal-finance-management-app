@@ -1,5 +1,6 @@
 package com.example.finalproject.model;
 
+import com.example.finalproject.model.accounts.CheckingAccount;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,7 +37,7 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy="user")
-    private Set<Account> accounts;
+    private Set<CheckingAccount> checkingAccounts;
 
     @OneToMany(mappedBy = "user")
     private Set<Budget> budgets;

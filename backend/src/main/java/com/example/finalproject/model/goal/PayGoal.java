@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import lombok.Data;
 
 @Entity
-@DiscriminatorValue("Pay")
+@DiscriminatorValue("PAY")
 @Data
 public class PayGoal extends Goal {
 

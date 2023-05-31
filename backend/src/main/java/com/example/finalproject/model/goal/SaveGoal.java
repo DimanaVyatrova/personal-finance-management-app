@@ -1,6 +1,6 @@
 package com.example.finalproject.model.goal;
 
-import com.example.finalproject.model.vaults.SavingsVault;
+import com.example.finalproject.model.accounts.SavingsAccount;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -14,6 +14,6 @@ import lombok.Data;
 public class SaveGoal extends Goal {
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "savingsVault_id")
-    private SavingsVault savingsVault;
+    @JoinColumn(name = "savingsAccount_id")
+    private SavingsAccount savingsAccount;
 }

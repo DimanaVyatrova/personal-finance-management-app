@@ -1,6 +1,6 @@
 package com.example.finalproject.model.transaction;
 
-import com.example.finalproject.model.Account;
+import com.example.finalproject.model.accounts.Account;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
