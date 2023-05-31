@@ -1,13 +1,17 @@
 package com.example.finalproject.controller;
 
+import com.example.finalproject.dto.CreateUserDto;
 import com.example.finalproject.dto.UserDto;
 import com.example.finalproject.model.User;
 import com.example.finalproject.service.UserService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,4 +34,9 @@ public class UserController {
         return modelMapper.map(user, UserDto.class);
     }
 
+    @PostMapping
+    public void addUser (@Valid @RequestBody CreateUserDto userDTO) {
+        User user = modelMapper.map(userDTO, User.class);
+        userService.addUser(user);
+    }
 }

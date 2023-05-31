@@ -22,4 +22,8 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username).orElseThrow(() -> new NoSuchElementException("Not found"));
     }
 
+    @Override
+    public User addUser(User user) {
+        return userRepository.save(user);
+    }
 }
