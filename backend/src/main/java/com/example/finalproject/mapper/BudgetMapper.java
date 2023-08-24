@@ -35,4 +35,18 @@ public class BudgetMapper {
                 .recurringPeriod(recurringPeriod)
                 .build();
     }
+
+    public BudgetDto toDto(Budget budget) {
+        BudgetDto budgetDto = new BudgetDto();
+        budgetDto.setId(budget.getId());
+        budgetDto.setCurrentAmount(budget.getCurrentAmount());
+        budgetDto.setLimitAmount(budget.getLimitAmount());
+        budgetDto.setName(budget.getName());
+        budgetDto.setPeriodEnd(budget.getPeriodEnd().toString());
+        budgetDto.setPeriodStart(budget.getPeriodStart().toString());
+        budgetDto.setReccuringPeriod(budget.getRecurringPeriod().toString());
+        budgetDto.setUserId(budget.getUser().getId());
+
+        return budgetDto;
+    }
 }

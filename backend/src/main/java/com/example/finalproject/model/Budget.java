@@ -54,4 +54,5 @@ public class Budget {
 
     @Enumerated(EnumType.STRING)
     private RecurringPeriod recurringPeriod;
+
 }

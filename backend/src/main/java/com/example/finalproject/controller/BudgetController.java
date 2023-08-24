@@ -10,6 +10,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @AllArgsConstructor
 @RestController
@@ -20,15 +22,15 @@ public class BudgetController {
     UserService userService;
     BudgetService budgetService;
 
-    /*@GetMapping()
-    public String getBudgets() {
+    @GetMapping()
+    public List<BudgetDto> getBudgets() {
         return budgetService.getAllBudgets();
     }
 
     @GetMapping("{id}")
-    public String getBudgetsById(@PathVariable Long id) {
+    public BudgetDto getBudgetsById(@PathVariable Long id) {
         return budgetService.getBudgetById(id);
-    }*/
+    }
 
     @PostMapping()
     public void createBudget(@RequestBody BudgetDto budgetDto) {
@@ -36,5 +38,10 @@ public class BudgetController {
         User user = userService.getUserById(budgetDto.getUserId());
         //userService.getUserById(budgetDto.getUserId()).getBudgets().add(mapper.toEntity(budgetDto, user));
         budgetService.create(mapper.toEntity(budgetDto, user));
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteBudget(@PathVariable Long id) {
+        budgetService.deleteBudget(id);
     }
 }
