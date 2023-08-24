@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+/*@Repository
 public class AccountRepositoryImpl implements AccountRepository {
     List<AccountDto> accounts = new ArrayList<>();
     @Override
@@ -17,4 +17,4 @@ public class AccountRepositoryImpl implements AccountRepository {
         accounts.add(accountDto);
         return accounts.get(0).toString();
     }
-}
+}*/

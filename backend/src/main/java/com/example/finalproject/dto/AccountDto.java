@@ -9,6 +9,7 @@ public class AccountDto {
     private Long id;
     private Long balance;
     private Long userId;
+    private String type; //checking, saving, investment
 
     @Override
     public String toString() {
