@@ -1,6 +1,7 @@
 package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.AccountDto;
+import com.example.finalproject.mapper.AccountMapper;
 import com.example.finalproject.service.AccountService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,9 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountController {
 
     private AccountService accountService;
+    private AccountMapper accountMapper;
 
     @PostMapping()
-    public String addAccount(@RequestBody AccountDto accountDto) {
-        return accountService.create(accountDto);
+    public void createAccount(@RequestBody AccountDto accountDto) {
+        accountService.create(accountMapper.toEntity(accountDto));
     }
 }

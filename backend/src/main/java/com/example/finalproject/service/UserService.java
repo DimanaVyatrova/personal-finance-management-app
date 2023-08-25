@@ -21,4 +21,8 @@ public class UserService {
         }
         throw new RuntimeException();
     }
+
+    public User getUserByName(String name) {
+        return getUserById(userRepository.findByUsername(name).getId());
+    }
 }

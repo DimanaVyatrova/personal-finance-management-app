@@ -26,6 +26,9 @@ public class Account {
     @Column(nullable = false)
     private Double balance;
 
+    @Column(nullable = false)
+    private String name;
+
     @OneToMany(mappedBy = "account")
     private Set<TransactionAccount> transactionAccounts;
 }

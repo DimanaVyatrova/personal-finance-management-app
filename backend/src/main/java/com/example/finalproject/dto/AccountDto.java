@@ -6,17 +6,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class AccountDto {
-    private Long id;
-    private Long balance;
-    private Long userId;
+    private Double balance;
+    private String name;
+    private String relationName; //if type == checking, this is username
+                               //if type == saving, this is checkingAccount "parent" name
+                               //if type == investment, this is checkingAccount "parent" name
+    private String goalName;
     private String type; //checking, saving, investment
 
-    @Override
-    public String toString() {
-        return "AccountDto{" +
-                "id=" + id +
-                ", balance=" + balance +
-                ", userId=" + userId +
-                '}';
-    }
 }

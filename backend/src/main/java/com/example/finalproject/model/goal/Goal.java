@@ -1,13 +1,7 @@
 package com.example.finalproject.model.goal;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.DiscriminatorColumn;
-import jakarta.persistence.DiscriminatorType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.Table;
+import com.example.finalproject.model.User;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -17,7 +11,12 @@ import lombok.Data;
 @DiscriminatorColumn(name = "goal_type", discriminatorType = DiscriminatorType.STRING)
 public class Goal {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     @Column(nullable = false)
     private Double goalAmount;

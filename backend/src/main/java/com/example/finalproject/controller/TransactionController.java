@@ -1,10 +1,12 @@
 package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.TransactionDto;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
+@AllArgsConstructor
 @RestController
 @RequestMapping("transactions")
 public class TransactionController {
@@ -17,8 +19,8 @@ public class TransactionController {
     }
 
     //добавя транзакция към акаунт със съответното id
-    @PostMapping("{id}")
-    public Long addTransaction (@RequestBody TransactionDto transactionDto) {
-        return 0L;
+    @PostMapping()
+    public void createTransaction (@RequestBody TransactionDto transactionDto) {
+
     }
 }

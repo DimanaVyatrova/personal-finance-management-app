@@ -20,7 +20,6 @@ import java.util.List;
 @RequestMapping("budgets")
 public class BudgetController {
     BudgetMapper mapper;
-
     UserService userService;
     BudgetService budgetService;
     CategoryService categoryService;

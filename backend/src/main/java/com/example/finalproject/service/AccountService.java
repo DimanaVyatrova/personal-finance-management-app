@@ -1,16 +1,24 @@
 package com.example.finalproject.service;
 
 import com.example.finalproject.dto.AccountDto;
+import com.example.finalproject.model.accounts.Account;
+import com.example.finalproject.model.accounts.CheckingAccount;
 import com.example.finalproject.repository.AccountRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class AccountService {
+    @Autowired
     private AccountRepository accountRepository;
 
-    /*public String create(AccountDto accountDto) {
-        return accountRepository.create(accountDto);
-    }*/
+    public void create(Account account) {
+        accountRepository.save(account);
+    }
+
+    public Account getCheckingAccountByName(String name) {
+        return accountRepository.findByName(name);
+    }
 }
