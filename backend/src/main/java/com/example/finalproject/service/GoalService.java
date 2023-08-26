@@ -29,6 +29,10 @@ public class GoalService {
         return goalRepository.findByName(name);
     }
 
+    public Goal getGoalById(Long id) {
+        return goalRepository.findById(id).get();
+    }
+
     public void deleteGoalByName(String name) {
         goalRepository.deleteById(getGoalByName(name).getId());
     }

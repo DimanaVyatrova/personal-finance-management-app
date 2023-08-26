@@ -45,4 +45,27 @@ public class AccountMapper {
            return investmentAccount;
        }
     }
+
+    public AccountDto toDto(Account account) {
+        AccountDto accountDto = new AccountDto();
+        accountDto.setBalance(account.getBalance());
+        accountDto.setName(account.getName());
+
+        if (account instanceof CheckingAccount) {
+            accountDto.setType("checking");
+            accountDto.setRelationName(((CheckingAccount) account).getUser().getUsername());
+        }
+        if (account instanceof SavingsAccount) {
+            accountDto.setType("savings");
+            accountDto.setRelationName(((SavingsAccount) account).getCheckingAccount().getName());
+            accountDto.setRelationName(((SavingsAccount) account).getGoal().getName());
+        }
+        if (account instanceof InvestmentAccount) {
+            accountDto.setType("investment");
+            accountDto.setRelationName(((InvestmentAccount) account).getCheckingAccount().getName());
+        }
+
+        return accountDto;
+
+    }
 }

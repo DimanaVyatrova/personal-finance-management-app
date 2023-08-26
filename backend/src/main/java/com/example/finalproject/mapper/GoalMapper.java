@@ -32,7 +32,6 @@ public class GoalMapper {
             saveGoal.setName(dto.getName());
             saveGoal.setGoalAmount(dto.getGoalAmount());
             saveGoal.setCurrentAmount(dto.getCurrentAmount());
-            saveGoal.setSavingsAccount(new SavingsAccount());
             return saveGoal;
         }
     }
@@ -46,7 +45,7 @@ public class GoalMapper {
             goalDto.setCurrentAmount(goal.getCurrentAmount());
             goalDto.setUserId(goal.getUser().getId());
             goalDto.setPayee(((PayGoal) goal).getPayee());
-            goalDto.setSavingsAccountId(null);
+            //goalDto.setSavingsAccountId(null);
         }
 
         if (goal instanceof SaveGoal) {
@@ -56,7 +55,7 @@ public class GoalMapper {
             goalDto.setCurrentAmount(goal.getCurrentAmount());
             goalDto.setUserId(goal.getUser().getId());
             goalDto.setPayee(null);
-            goalDto.setSavingsAccountId(((SaveGoal) goal).getSavingsAccount().getId());
+            //goalDto.setSavingsAccountId(((SaveGoal) goal).getSavingsAccount().getId());
         }
 
         return goalDto;

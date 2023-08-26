@@ -5,10 +5,9 @@ import com.example.finalproject.mapper.AccountMapper;
 import com.example.finalproject.service.AccountService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j
 @AllArgsConstructor
@@ -23,4 +22,25 @@ public class AccountController {
     public void createAccount(@RequestBody AccountDto accountDto) {
         accountService.create(accountMapper.toEntity(accountDto));
     }
+
+    @GetMapping()
+    public List<AccountDto> getAllAccounts() {
+        return accountService.getAllAccounts().stream().map(accountMapper::toDto).toList();
+    }
+
+    @GetMapping("{id}")
+    public AccountDto getAccountById(@PathVariable Long id) {
+        return accountMapper.toDto(accountService.getAccountById(id));
+    }
+
+    /*@GetMapping("{type}")
+    public List<AccountDto> getAccountsByType(@PathVariable String type) {
+
+    }*/
+
+    @DeleteMapping("{id}")
+    public void deleteAccountById(@PathVariable Long id) {
+        accountService.deleteAccountById(id);
+    }
+
 }

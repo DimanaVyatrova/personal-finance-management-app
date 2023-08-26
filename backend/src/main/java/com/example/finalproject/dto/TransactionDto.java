@@ -8,10 +8,11 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 public class TransactionDto {
-    private Long id;
     private Long amount;
-    private LocalDate createdAt;
+    private String createdAt;
     private String period;
     private String transactionParty;
     private Long categoryId;
+    private Long accountId;
+    private String transactionType; //INCOME, EXPENSE
 }

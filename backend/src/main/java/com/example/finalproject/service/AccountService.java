@@ -1,12 +1,12 @@
 package com.example.finalproject.service;
 
-import com.example.finalproject.dto.AccountDto;
 import com.example.finalproject.model.accounts.Account;
-import com.example.finalproject.model.accounts.CheckingAccount;
 import com.example.finalproject.repository.AccountRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -18,7 +18,20 @@ public class AccountService {
         accountRepository.save(account);
     }
 
+    public List<Account> getAllAccounts() {
+        return  accountRepository.findAll();
+    }
+
     public Account getCheckingAccountByName(String name) {
         return accountRepository.findByName(name);
     }
+
+    public Account getAccountById(Long id) {
+        return accountRepository.findById(id).get();
+    }
+
+    public void deleteAccountById(Long id) {
+        accountRepository.deleteById(id);
+    }
+
 }

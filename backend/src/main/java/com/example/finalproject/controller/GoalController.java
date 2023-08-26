@@ -41,6 +41,11 @@ public class GoalController {
         return goalMapper.toDto(goalService.getGoalByName(name));
     }
 
+    @GetMapping("{id}")
+    public GoalDto getGoalById(@PathVariable Long id) {
+        return goalMapper.toDto(goalService.getGoalById(id));
+    }
+
     @DeleteMapping("{name}")
     public void deleteGoalByName(@PathVariable String name) {
         goalService.deleteGoalByName(name);
