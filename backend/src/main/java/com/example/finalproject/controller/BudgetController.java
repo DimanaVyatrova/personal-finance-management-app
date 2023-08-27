@@ -31,12 +31,11 @@ public class BudgetController {
 
     @GetMapping("{id}")
     public BudgetDto getBudgetsById(@PathVariable Long id) {
-        return budgetService.getBudgetById(id);
+        return budgetMapper.toDto(budgetService.getBudgetById(id));
     }
 
     @PostMapping()
     public void createBudget(@RequestBody BudgetDto budgetDto) {
-        System.out.println("This is get user id : " + budgetDto.getCurrentAmount());
         User user = userService.getUserById(budgetDto.getUserId());
         budgetService.create(budgetMapper.toEntity(budgetDto, user));
         for (String category : budgetDto.getCategories()) {

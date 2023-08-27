@@ -22,8 +22,9 @@ public class BudgetService {
         budgetRepository.save(budget);
     }
 
-    public BudgetDto getBudgetById(Long id) {
-        return budgetMapper.toDto(budgetRepository.findById(id).get());
+    public Budget getBudgetById(Long id) {
+//        return budgetMapper.toDto(budgetRepository.findById(id).get());
+        return budgetRepository.findById(id).get();
     }
 
     public Budget getBudgetByName(String name) {

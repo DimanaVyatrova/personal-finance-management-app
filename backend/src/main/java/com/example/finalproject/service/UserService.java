@@ -15,7 +15,6 @@ public class UserService {
     }
 
     public User getUserById(Long id) {
-        System.out.println("This is the Id : " + id);
         if (userRepository.findById(id).isPresent()) {
             return userRepository.findById(id).get();
         }

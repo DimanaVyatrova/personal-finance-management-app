@@ -21,8 +21,9 @@ public class GoalService {
         goalRepository.save(goal);
     }
 
-    public List<GoalDto> getAllGoals() {
-        return goalRepository.findAll().stream().map(goalMapper::toDto).toList();
+    public List<Goal> getAllGoals() {
+//        return goalRepository.findAll().stream().map(goalMapper::toDto).toList();
+        return goalRepository.findAll();
     }
 
     public Goal getGoalByName(String name) {

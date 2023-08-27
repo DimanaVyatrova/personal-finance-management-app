@@ -29,7 +29,7 @@ public class GoalController {
 
     @GetMapping()
     public List<GoalDto> getGoals() {
-        return goalService.getAllGoals();
+        return goalService.getAllGoals().stream().map(goalMapper::toDto).toList();
     }
 
     @GetMapping("{name}")
