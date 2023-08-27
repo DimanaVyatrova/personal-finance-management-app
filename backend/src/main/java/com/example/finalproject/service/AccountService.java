@@ -22,12 +22,17 @@ public class AccountService {
         return  accountRepository.findAll();
     }
 
-    public Account getCheckingAccountByName(String name) {
+    public Account getAccountByName(String name) {
         return accountRepository.findByName(name);
     }
 
     public Account getAccountById(Long id) {
         return accountRepository.findById(id).get();
+    }
+
+    public void updateAccount(Account account) {
+        account.setId(getAccountByName(account.getName()).getId());
+        accountRepository.save(account);
     }
 
     public void deleteAccountById(Long id) {

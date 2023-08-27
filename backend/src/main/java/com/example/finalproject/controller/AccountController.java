@@ -2,6 +2,7 @@ package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.AccountDto;
 import com.example.finalproject.mapper.AccountMapper;
+import com.example.finalproject.model.User;
 import com.example.finalproject.service.AccountService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -37,6 +38,11 @@ public class AccountController {
     public List<AccountDto> getAccountsByType(@PathVariable String type) {
 
     }*/
+
+    @PutMapping()
+    public void updateAccount(@RequestBody AccountDto accountDto) {
+        accountService.updateAccount(accountMapper.toEntity(accountDto));
+    }
 
     @DeleteMapping("{id}")
     public void deleteAccountById(@PathVariable Long id) {
