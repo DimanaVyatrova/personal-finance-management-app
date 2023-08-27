@@ -1,6 +1,7 @@
 package com.example.finalproject.model;
 
 import com.example.finalproject.model.accounts.CheckingAccount;
+import com.example.finalproject.model.goal.Goal;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +13,7 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,6 +22,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "users")
 public class User {
@@ -41,6 +44,9 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private Set<Budget> budgets;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Goal> goals;
 
     @Lob
     @Basic(fetch = FetchType.LAZY)

@@ -1,4 +1,7 @@
 package com.example.finalproject.repository;
 
-public interface TransactionRepository {
+import com.example.finalproject.model.transaction.Transaction;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
 }

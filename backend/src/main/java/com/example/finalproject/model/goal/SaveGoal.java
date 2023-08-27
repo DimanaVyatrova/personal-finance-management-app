@@ -13,7 +13,8 @@ import lombok.Data;
 @Data
 public class SaveGoal extends Goal {
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "savingsAccount_id")
+    //@OneToOne(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "savingsAccount_id")
+    @OneToOne(mappedBy = "goal")
     private SavingsAccount savingsAccount;
 }
