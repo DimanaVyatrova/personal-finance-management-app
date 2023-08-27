@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("users")
 public class UserController {
-    UserService userService;
-    UserMapper mapper;
+    private UserService userService;
+    private UserMapper mapper;
     @PostMapping()
     public void createUser(@RequestBody UserDto userDto) {
         userService.addUser(mapper.toEntity(userDto));

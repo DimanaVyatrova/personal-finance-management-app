@@ -1,8 +1,6 @@
 package com.example.finalproject.service;
 
-import com.example.finalproject.dto.GoalDto;
-import com.example.finalproject.mapper.GoalMapper;
-import com.example.finalproject.model.Budget;
+
 import com.example.finalproject.model.goal.Goal;
 import com.example.finalproject.repository.GoalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,17 +10,18 @@ import java.util.List;
 
 @Service
 public class GoalService {
+    private final GoalRepository goalRepository;
+
     @Autowired
-    GoalRepository goalRepository;
-    @Autowired
-    GoalMapper goalMapper;
+    public GoalService(GoalRepository goalRepository) {
+        this.goalRepository = goalRepository;
+    }
 
     public void create(Goal goal) {
         goalRepository.save(goal);
     }
 
     public List<Goal> getAllGoals() {
-//        return goalRepository.findAll().stream().map(goalMapper::toDto).toList();
         return goalRepository.findAll();
     }
 

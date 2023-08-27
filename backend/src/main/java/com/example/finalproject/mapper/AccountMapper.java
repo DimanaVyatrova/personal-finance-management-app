@@ -7,18 +7,19 @@ import com.example.finalproject.model.accounts.CheckingAccount;
 import com.example.finalproject.model.accounts.InvestmentAccount;
 import com.example.finalproject.model.accounts.SavingsAccount;
 import com.example.finalproject.service.AccountService;
-import com.example.finalproject.service.GoalService;
 import com.example.finalproject.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AccountMapper {
-    @Autowired
-    UserService userService;
-    @Autowired
-    AccountService accountService;
-    GoalService goalService;
+    private final UserService userService;
+    private final AccountService accountService;
+
+    public AccountMapper(UserService userService, AccountService accountService) {
+        this.userService = userService;
+        this.accountService = accountService;
+    }
+
     public Account toEntity(AccountDto accountDto) {
        if (accountDto.getType().equals("checking")) {
            CheckingAccount checkingAccount = new CheckingAccount();

@@ -13,10 +13,15 @@ import java.util.List;
 
 @Service
 public class TransactionService {
+    private final TransactionRepository transactionRepository;
+    private final TransactionAccountRepository transactionAccountRepository;
+
     @Autowired
-    TransactionRepository transactionRepository;
-    @Autowired
-    TransactionAccountRepository transactionAccountRepository;
+    public TransactionService(TransactionRepository transactionRepository,
+                              TransactionAccountRepository transactionAccountRepository) {
+        this.transactionRepository = transactionRepository;
+        this.transactionAccountRepository = transactionAccountRepository;
+    }
 
     public void createTransaction(Pair<Transaction, TransactionAccount> transaction) {
         transactionRepository.save(transaction.getFirst());

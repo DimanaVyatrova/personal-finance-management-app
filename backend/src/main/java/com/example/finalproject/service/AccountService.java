@@ -2,17 +2,19 @@ package com.example.finalproject.service;
 
 import com.example.finalproject.model.accounts.Account;
 import com.example.finalproject.repository.AccountRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class AccountService {
+    private final AccountRepository accountRepository;
+
     @Autowired
-    private AccountRepository accountRepository;
+    public AccountService(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
+    }
 
     public void create(Account account) {
         accountRepository.save(account);

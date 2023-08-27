@@ -16,9 +16,9 @@ import java.util.List;
 @RestController
 @RequestMapping("goals")
 public class GoalController {
-    UserService userService;
-    GoalMapper goalMapper;
-    GoalService goalService;
+    private UserService userService;
+    private GoalMapper goalMapper;
+    private GoalService goalService;
 
     @PostMapping()
     public void createGoal(@RequestBody GoalDto goalDto) {

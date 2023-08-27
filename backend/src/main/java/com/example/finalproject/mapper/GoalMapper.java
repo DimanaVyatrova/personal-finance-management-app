@@ -1,16 +1,12 @@
 package com.example.finalproject.mapper;
 
-import com.example.finalproject.dto.BudgetDto;
 import com.example.finalproject.dto.GoalDto;
-import com.example.finalproject.model.Budget;
 import com.example.finalproject.model.User;
-import com.example.finalproject.model.accounts.SavingsAccount;
 import com.example.finalproject.model.goal.Goal;
 import com.example.finalproject.model.goal.PayGoal;
 import com.example.finalproject.model.goal.SaveGoal;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 
 @Component
 public class GoalMapper {

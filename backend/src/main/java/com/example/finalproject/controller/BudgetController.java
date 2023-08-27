@@ -2,7 +2,6 @@ package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.BudgetDto;
 import com.example.finalproject.mapper.BudgetMapper;
-import com.example.finalproject.model.Budget;
 import com.example.finalproject.model.Category;
 import com.example.finalproject.model.User;
 import com.example.finalproject.service.BudgetService;
@@ -19,10 +18,10 @@ import java.util.List;
 @RestController
 @RequestMapping("budgets")
 public class BudgetController {
-    BudgetMapper budgetMapper;
-    UserService userService;
-    BudgetService budgetService;
-    CategoryService categoryService;
+    private BudgetMapper budgetMapper;
+    private UserService userService;
+    private BudgetService budgetService;
+    private CategoryService categoryService;
 
     @GetMapping()
     public List<BudgetDto> getBudgets() {

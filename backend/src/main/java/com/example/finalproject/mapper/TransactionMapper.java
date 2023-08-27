@@ -4,11 +4,9 @@ import com.example.finalproject.dto.TransactionDto;
 import com.example.finalproject.model.RecurringPeriod;
 import com.example.finalproject.model.transaction.Transaction;
 import com.example.finalproject.model.transaction.TransactionAccount;
-import com.example.finalproject.model.transaction.TransactionAccountKey;
 import com.example.finalproject.model.transaction.TransactionType;
 import com.example.finalproject.service.AccountService;
 import com.example.finalproject.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Component;
 
@@ -16,10 +14,13 @@ import java.time.LocalDate;
 
 @Component
 public class TransactionMapper {
-    @Autowired
-    CategoryService categoryService;
-    @Autowired
-    AccountService accountService;
+    private final CategoryService categoryService;
+    private final AccountService accountService;
+
+    public TransactionMapper(CategoryService categoryService, AccountService accountService) {
+        this.categoryService = categoryService;
+        this.accountService = accountService;
+    }
 
     public Pair<Transaction, TransactionAccount> toEntity(TransactionDto transactionDto) {
         RecurringPeriod recurringPeriod = null;

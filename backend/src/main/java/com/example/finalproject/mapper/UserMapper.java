@@ -2,8 +2,6 @@ package com.example.finalproject.mapper;
 
 import com.example.finalproject.dto.UserDto;
 import com.example.finalproject.model.User;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component

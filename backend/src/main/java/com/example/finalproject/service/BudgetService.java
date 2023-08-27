@@ -1,7 +1,6 @@
 package com.example.finalproject.service;
 
-import com.example.finalproject.dto.BudgetDto;
-import com.example.finalproject.mapper.BudgetMapper;
+
 import com.example.finalproject.model.Budget;
 import com.example.finalproject.repository.BudgetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,19 +10,17 @@ import java.util.List;
 
 @Service
 public class BudgetService {
+    private final BudgetRepository budgetRepository;
 
     @Autowired
-    BudgetRepository budgetRepository;
-
-    @Autowired
-    BudgetMapper budgetMapper;
-
+    public BudgetService(BudgetRepository budgetRepository) {
+        this.budgetRepository = budgetRepository;
+    }
     public void create(Budget budget) {
         budgetRepository.save(budget);
     }
 
     public Budget getBudgetById(Long id) {
-//        return budgetMapper.toDto(budgetRepository.findById(id).get());
         return budgetRepository.findById(id).get();
     }
 

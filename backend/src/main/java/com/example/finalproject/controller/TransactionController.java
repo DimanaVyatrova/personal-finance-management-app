@@ -14,8 +14,8 @@ import java.util.List;
 @RestController
 @RequestMapping("transactions")
 public class TransactionController {
-    TransactionService transactionService;
-    TransactionMapper transactionMapper;
+    private TransactionService transactionService;
+    private TransactionMapper transactionMapper;
 
     @GetMapping()
     public List<TransactionDto> getTransactions() {

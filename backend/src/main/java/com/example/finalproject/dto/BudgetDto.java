@@ -1,10 +1,8 @@
 package com.example.finalproject.dto;
 
-import com.example.finalproject.model.RecurringPeriod;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Data
