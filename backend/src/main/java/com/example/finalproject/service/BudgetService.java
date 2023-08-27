@@ -26,8 +26,17 @@ public class BudgetService {
         return budgetMapper.toDto(budgetRepository.findById(id).get());
     }
 
-    public List<BudgetDto> getAllBudgets() {
-        return budgetRepository.findAll().stream().map(budgetMapper::toDto).toList();
+    public Budget getBudgetByName(String name) {
+        return budgetRepository.findByName(name);
+    }
+
+    public List<Budget> getAllBudgets() {
+        return budgetRepository.findAll();
+    }
+
+    public void updateBudget(Budget budget) {
+        budget.setId(getBudgetByName(budget.getName()).getId());
+        budgetRepository.save(budget);
     }
 
     public void deleteBudget(Long id) {

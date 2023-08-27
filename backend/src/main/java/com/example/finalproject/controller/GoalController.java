@@ -1,9 +1,7 @@
 package com.example.finalproject.controller;
 
-import com.example.finalproject.dto.BudgetDto;
 import com.example.finalproject.dto.GoalDto;
 import com.example.finalproject.mapper.GoalMapper;
-import com.example.finalproject.model.Category;
 import com.example.finalproject.model.User;
 import com.example.finalproject.service.GoalService;
 import com.example.finalproject.service.UserService;
@@ -24,9 +22,7 @@ public class GoalController {
 
     @PostMapping()
     public void createGoal(@RequestBody GoalDto goalDto) {
-        //System.out.println("This is get user id : " + budgetDto.getCurrentAmount());
         User user = userService.getUserById(goalDto.getUserId());
-        //userService.getUserById(budgetDto.getUserId()).getBudgets().add(mapper.toEntity(budgetDto, user));
         goalService.create(goalMapper.toEntity(goalDto, user));
 
     }
@@ -44,6 +40,12 @@ public class GoalController {
     @GetMapping("{id}")
     public GoalDto getGoalById(@PathVariable Long id) {
         return goalMapper.toDto(goalService.getGoalById(id));
+    }
+
+    @PutMapping()
+    public void updateGoal(@RequestBody GoalDto goalDto) {
+        User user = userService.getUserById(goalDto.getUserId());
+        goalService.updateGoal(goalMapper.toEntity(goalDto, user));
     }
 
     @DeleteMapping("{name}")

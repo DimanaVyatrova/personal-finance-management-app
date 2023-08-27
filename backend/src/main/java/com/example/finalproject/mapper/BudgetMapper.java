@@ -25,7 +25,7 @@ public class BudgetMapper {
             recurringPeriod = RecurringPeriod.QUARTERLY;
         }
         return Budget.builder()
-                .id(dto.getId())
+                //.id(dto.getId())
                 .user(user)
                 .currentAmount(dto.getCurrentAmount())
                 .limitAmount(dto.getLimitAmount())
@@ -38,7 +38,7 @@ public class BudgetMapper {
 
     public BudgetDto toDto(Budget budget) {
         BudgetDto budgetDto = new BudgetDto();
-        budgetDto.setId(budget.getId());
+        //budgetDto.setId(budget.getId());
         budgetDto.setCurrentAmount(budget.getCurrentAmount());
         budgetDto.setLimitAmount(budget.getLimitAmount());
         budgetDto.setName(budget.getName());

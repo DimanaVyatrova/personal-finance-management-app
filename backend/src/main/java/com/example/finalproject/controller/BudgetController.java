@@ -19,14 +19,14 @@ import java.util.List;
 @RestController
 @RequestMapping("budgets")
 public class BudgetController {
-    BudgetMapper mapper;
+    BudgetMapper budgetMapper;
     UserService userService;
     BudgetService budgetService;
     CategoryService categoryService;
 
     @GetMapping()
     public List<BudgetDto> getBudgets() {
-        return budgetService.getAllBudgets();
+        return budgetService.getAllBudgets().stream().map(budgetMapper::toDto).toList();
     }
 
     @GetMapping("{id}")
@@ -38,14 +38,19 @@ public class BudgetController {
     public void createBudget(@RequestBody BudgetDto budgetDto) {
         System.out.println("This is get user id : " + budgetDto.getCurrentAmount());
         User user = userService.getUserById(budgetDto.getUserId());
-        //userService.getUserById(budgetDto.getUserId()).getBudgets().add(mapper.toEntity(budgetDto, user));
-        budgetService.create(mapper.toEntity(budgetDto, user));
+        budgetService.create(budgetMapper.toEntity(budgetDto, user));
         for (String category : budgetDto.getCategories()) {
             Category category1 = new Category();
             category1.setName(category);
-            category1.setBudget(mapper.toEntity(budgetDto, user));
+            category1.setBudget(budgetService.getBudgetByName(budgetDto.getName()));
             categoryService.createCategory(category1);
         }
+    }
+
+    @PutMapping()
+    public void updateBudget(@RequestBody BudgetDto budgetDto) {
+        User user = userService.getUserById(budgetDto.getUserId());
+        budgetService.updateBudget(budgetMapper.toEntity(budgetDto, user));
     }
 
     @DeleteMapping("{id}")

@@ -33,6 +33,11 @@ public class GoalService {
         return goalRepository.findById(id).get();
     }
 
+    public void updateGoal(Goal goal) {
+        goal.setId(getGoalByName(goal.getName()).getId());
+        goalRepository.save(goal);
+    }
+
     public void deleteGoalByName(String name) {
         goalRepository.deleteById(getGoalByName(name).getId());
     }
