@@ -7,6 +7,7 @@ import com.example.finalproject.model.transaction.TransactionAccount;
 import com.example.finalproject.model.transaction.TransactionType;
 import com.example.finalproject.service.AccountService;
 import com.example.finalproject.service.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,7 @@ public class TransactionMapper {
     private final CategoryService categoryService;
     private final AccountService accountService;
 
+    @Autowired
     public TransactionMapper(CategoryService categoryService, AccountService accountService) {
         this.categoryService = categoryService;
         this.accountService = accountService;

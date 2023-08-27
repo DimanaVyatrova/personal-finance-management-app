@@ -8,6 +8,7 @@ import com.example.finalproject.model.accounts.InvestmentAccount;
 import com.example.finalproject.model.accounts.SavingsAccount;
 import com.example.finalproject.service.AccountService;
 import com.example.finalproject.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,6 +16,7 @@ public class AccountMapper {
     private final UserService userService;
     private final AccountService accountService;
 
+    @Autowired
     public AccountMapper(UserService userService, AccountService accountService) {
         this.userService = userService;
         this.accountService = accountService;
