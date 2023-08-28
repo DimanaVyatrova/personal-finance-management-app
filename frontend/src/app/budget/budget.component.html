@@ -1,0 +1,28 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-subtitle>Budget</mat-card-subtitle>
+    <mat-card-title>Food</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="info">
+      <div class="titles">
+        <p class="field">Limit amount</p>
+        <p class="field">Remaining</p>
+        <p class="field">Type</p>
+        <p class="field">End date</p>
+        <p class="field">Categories</p>
+      </div>
+      <div class="values">
+        <p>{{limitAmount}}</p>
+        <p>{{remainingAmount}}</p>
+        <p>{{budgetType}}</p>
+        <p>{{endDate}}</p>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>EDIT</button>
+    <button mat-button>DELETE</button>
+  </mat-card-actions>
+</mat-card>

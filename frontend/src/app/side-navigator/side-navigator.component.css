@@ -1,0 +1,10 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 11%;
+}
+
+.add-button {
+  background-color: #fa99ad;
+  margin-top: 10px;
+}
