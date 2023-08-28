@@ -1,0 +1,13 @@
+<app-navigation></app-navigation>
+<div class="container">
+  <router-outlet></router-outlet>
+  <div class="side">
+    <app-side-navigator></app-side-navigator>
+    <button mat-fab extended class="add-button" (click)="onBudgetClick()">
+      <mat-icon>add</mat-icon>
+      Add a Budget
+    </button>
+  </div>
+  <app-budget *ngIf="addBudgetClicked == false else elseBlock"></app-budget>
+  <ng-template #elseBlock><app-budget-form></app-budget-form></ng-template>
+</div>

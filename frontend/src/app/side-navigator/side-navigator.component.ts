@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-navigator.component.css']
 })
 export class SideNavigatorComponent {
+  items: any[] =  ['Food', 'Entertainment', 'Education']
+  addBudgetClicked = false
 
+  onBudgetClick() {
+    this.addBudgetClicked = !this.addBudgetClicked
+    console.log(this.addBudgetClicked)
+  }
 }
