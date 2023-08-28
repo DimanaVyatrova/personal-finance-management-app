@@ -1,5 +1,5 @@
 mat-card {
-  width: 45%;
+  /*width: 45%;*/
   margin: auto;
   background-color: rgba(243, 241, 236, 0.35);
 }
@@ -32,5 +32,5 @@ mat-card-header {
 }
 
 mat-card {
-  margin-top: 40px;
+  /*margin-top: 40px;*/
 }
