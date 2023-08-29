@@ -12,6 +12,8 @@ import { BudgetFormComponent } from './budget-form/budget-form.component';
 import { SideNavItemComponent } from './side-nav-item/side-nav-item.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,9 +30,11 @@ import {CommonModule} from "@angular/common";
     MaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    FormsModule
   ],
-  exports: [AppRoutingModule, BudgetComponent, BudgetFormComponent, SideNavigatorComponent],
+  exports: [AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

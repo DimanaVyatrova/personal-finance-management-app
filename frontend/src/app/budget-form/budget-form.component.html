@@ -2,37 +2,39 @@
   <mat-card-header>
     <mat-card-title>Add a New Budget</mat-card-title>
   </mat-card-header>
-  <mat-form-field>
-    <mat-label>Name</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Limit Amount</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Type</mat-label>
-    <mat-select>
-      <mat-option value="MONTHLY">MONTHLY</mat-option>
-      <mat-option value="YEARLY">YEARLY</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Start Date</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Categories</mat-label>
-    <mat-select>
-      <mat-option value="one">one</mat-option>
-      <mat-option value="two">two</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Add a New Category</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <button mat-flat-button color="accent">Add the Budget</button>
+  <form form #addBudget = "ngForm" (ngSubmit) = "onSubmit(addBudget.value)" >
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input name="name" ngModel matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Limit Amount</mat-label>
+      <input name="limitAmount" ngModel matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Type</mat-label>
+      <mat-select name="type" ngModel>
+        <mat-option value="MONTHLY">MONTHLY</mat-option>
+        <mat-option value="YEARLY">YEARLY</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Start Date</mat-label>
+      <input name="startDate" ngModel matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Categories</mat-label>
+      <mat-select name="category" ngModel>
+        <mat-option value="one">one</mat-option>
+        <mat-option value="two">two</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Add a New Category</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <button mat-flat-button color="accent" type="submit">Add the Budget</button>
+  </form>
 </mat-card>
 
 
