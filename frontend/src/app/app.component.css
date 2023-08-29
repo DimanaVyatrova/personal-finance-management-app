@@ -1,0 +1,34 @@
+app-sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: contentt;
+}
+
+app-navbar {
+  grid-area: navbar;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 2fr 4fr 4fr 1fr;
+  grid-template-areas:
+    "navbar navbar navbar navbar navbar"
+    "... sidebar contentt contentt ..."
+    "... sidebar contentt contentt ..."
+    "... sidebar contentt contentt ..."
+    "... sidebar contentt contentt ..."
+    "... sidebar contentt contentt ..."
+    "... sidebar contentt contentt ..."
+    "... sidebar contentt contentt ..."
+    "... sidebar contentt contentt ..."
+    "... sidebar contentt contentt ..."
+    "... ... ... ... ...";
+
+  background-color: #fff;
+  color: #444;
+}
