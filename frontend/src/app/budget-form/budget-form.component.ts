@@ -27,7 +27,7 @@ export class BudgetFormComponent {
     this.limitAmount = data.limitAmount;
     this.currentAmount = data.limitAmount;
     this.reccuringPeriod = data.type;
-    this.periodStart = data.periodStart;
+    this.periodStart = data.startDate;
     this.periodEnd = "2023-09-09"
 
 

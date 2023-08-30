@@ -28,6 +28,10 @@ export class BudgetService {
     return this.http.get('/api/budgets/1');
   }
 
+  getBugets() : Observable<any> {
+    return this.http.get('/api/budgets')
+  }
+
   addBudget(currentAmount: number, limitAmount: number, name: string, periodEnd: string,
             periodStart: string, reccuringPeriod: string, userId: number, categories : string[]){
     return this.http.post('/api/budgets',{

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Budget} from "../models/budget";
 
 @Component({
   selector: 'app-side-nav-item',
@@ -6,8 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-nav-item.component.css']
 })
 export class SideNavItemComponent {
-  items: any[] =  ['Food', 'Entertainment', 'Education']
   addBudgetClicked = false
+
+  budgets : Budget[] = []
 
   onBudgetClick() {
     this.addBudgetClicked = true

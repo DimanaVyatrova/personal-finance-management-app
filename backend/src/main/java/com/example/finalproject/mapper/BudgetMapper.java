@@ -12,16 +12,16 @@ import java.time.LocalDate;
 public class BudgetMapper {
     public Budget toEntity(BudgetDto dto, User user) {
         RecurringPeriod recurringPeriod = null;
-        if (dto.getReccuringPeriod().equals("monthly")) {
+        if (dto.getReccuringPeriod().equals("MONTHLY")) {
             recurringPeriod = RecurringPeriod.MONTHLY;
         }
-        if (dto.getReccuringPeriod().equals("annualy")) {
+        if (dto.getReccuringPeriod().equals("ANNUALLY")) {
             recurringPeriod = RecurringPeriod.ANNUALLY;
         }
-        if (dto.getReccuringPeriod().equals("weekly")) {
+        if (dto.getReccuringPeriod().equals("WEEKLY")) {
             recurringPeriod = RecurringPeriod.WEEKLY;
         }
-        if (dto.getReccuringPeriod().equals("quaterly")) {
+        if (dto.getReccuringPeriod().equals("QUARTERLY")) {
             recurringPeriod = RecurringPeriod.QUARTERLY;
         }
         return Budget.builder()
