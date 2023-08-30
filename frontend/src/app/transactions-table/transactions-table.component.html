@@ -1,0 +1,90 @@
+<!--<form style="display: flex" [formGroup]="formControl">-->
+<!--  <mat-form-field>-->
+<!--    <input matInput formControlName="position" type="number" min="0" placeholder="Date">-->
+<!--&lt;!&ndash;    <placeholder>Date (exact)</placeholder>&ndash;&gt;-->
+<!--  </mat-form-field>-->
+<!--  <mat-form-field>-->
+<!--    <input matInput formControlName="name">-->
+<!--&lt;!&ndash;    <placeholder>Category (substring)</placeholder>&ndash;&gt;-->
+<!--  </mat-form-field>-->
+<!--  <mat-form-field>-->
+<!--    <input matInput formControlName="symbol">-->
+<!--&lt;!&ndash;    <placeholder>Amount (exact)</placeholder>&ndash;&gt;-->
+<!--  </mat-form-field>-->
+<!--</form>-->
+
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
+
+  <!-- Date Column -->
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by date">
+      Date
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+  </ng-container>
+
+  <!-- Category Column -->
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by category">
+      Category
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+  </ng-container>
+
+  <!-- Amount Column -->
+  <ng-container matColumnDef="amount">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by amount">
+      Amount
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+  </ng-container>
+
+  <!-- Budget Column -->
+  <ng-container matColumnDef="budget">
+    <th mat-header-cell *matHeaderCellDef>
+      Budget
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.budget}} </td>
+  </ng-container>
+
+  <!-- Goal Column -->
+  <ng-container matColumnDef="goal">
+    <th mat-header-cell *matHeaderCellDef>
+      Goal
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.goal}} </td>
+  </ng-container>
+
+  <!-- Notes Column -->
+  <ng-container matColumnDef="notes">
+    <th mat-header-cell *matHeaderCellDef>
+      Notes
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.notes}} </td>
+  </ng-container>
+
+  <!-- Transaction Partu Column -->
+  <ng-container matColumnDef="transactionParty">
+    <th mat-header-cell *matHeaderCellDef>
+      Transaction Party
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.transactionParty}} </td>
+  </ng-container>
+
+  <!-- Is Recurring Column -->
+  <ng-container matColumnDef="isRecurring">
+    <th mat-header-cell *matHeaderCellDef>
+      Recurring
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.goal}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [length]="100"
+               [pageSize]="5"
+               aria-label="Select page">
+</mat-paginator>
