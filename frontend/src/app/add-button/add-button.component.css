@@ -1,6 +1,5 @@
 .add-button {
   background-color: #fa99ad;
-  margin-top: 10px;
   height: 40px;
   width: 100%;
   color: white;
@@ -10,6 +9,7 @@
   justify-content: center;
   border: none;
   cursor: pointer;
+  padding: 1rem;
 }
 
 .add-button:hover {

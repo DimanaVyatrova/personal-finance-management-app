@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" [style.max-height.px]="maxHeight">
   <ul class="accounts menu">
     <li class="normal-menu" *ngFor="let account of accounts">
       <button mat-button class="normal" [class.selected]="account === selectedAccount" (click)="onSelect(account)">

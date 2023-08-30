@@ -14,21 +14,33 @@ app-navbar {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-gap: 30px;
-  grid-template-columns: .2fr 2.5fr 4fr 4fr .2fr;
-  grid-template-areas:
-    "navbar navbar navbar navbar navbar"
-    "... sidebar contentt contentt ..."
-    "... sidebar contentt contentt ..."
-    "... sidebar contentt contentt ..."
-    "... sidebar contentt contentt ..."
-    "... sidebar contentt contentt ..."
-    "... sidebar contentt contentt ..."
-    "... sidebar contentt contentt ..."
-    "... sidebar contentt contentt ..."
-    "... sidebar contentt contentt ..."
-    "... ... ... ... ...";
+  column-gap: 4rem;
+  row-gap: 1rem;
+  /*grid-template-columns: .2fr 2.5fr 4fr 4fr .2fr;*/
+  grid-template-columns: .2fr 2.5fr 12fr .2fr;
 
-  background-color: #fff;
+  /*grid-template-areas:*/
+    /*"navbar navbar navbar navbar navbar"*/
+    /*"navbar navbar navbar navbar navbar"*/
+    /*"navbar navbar navbar navbar navbar"*/
+
+    /*"... sidebar contentt contentt ..."*/
+    /*"... sidebar contentt contentt ..."*/
+    /*"... sidebar contentt contentt ..."*/
+    /*"... sidebar contentt contentt ..."*/
+    /*"... sidebar contentt contentt ..."*/
+    /*"... sidebar contentt contentt ..."*/
+    /*"... sidebar contentt contentt ..."*/
+    /*"... ... ... ... ...";*/
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "... sidebar contentt ..."
+    "... sidebar contentt ..."
+    "... sidebar contentt ..."
+    "... sidebar contentt ..."
+    "... sidebar contentt ..."
+    "... ... ... ...";
+
+background-color: #fff;
   color: #444;
 }

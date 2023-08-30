@@ -1,4 +1,12 @@
 .wrapper {
   background: #BC9393;
-  height: 100%;
 }
+
+.vaults-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+

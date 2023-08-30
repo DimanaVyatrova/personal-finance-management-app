@@ -15,6 +15,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatInputModule} from "@angular/material/input";
 import { TransactionsTableComponent } from './transactions-table/transactions-table.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import {MatCardModule} from "@angular/material/card";
+import { VaultComponent } from './vault/vault.component';
 
 
 @NgModule({
@@ -24,6 +27,8 @@ import { TransactionsTableComponent } from './transactions-table/transactions-ta
     SidebarComponent,
     ContentComponent,
     AccountsComponent,
+    TransactionsComponent,
+    VaultComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ import { TransactionsTableComponent } from './transactions-table/transactions-ta
     MatFormFieldModule,
     MatPaginatorModule,
     MatInputModule,
-    TransactionsTableComponent
+    TransactionsTableComponent,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

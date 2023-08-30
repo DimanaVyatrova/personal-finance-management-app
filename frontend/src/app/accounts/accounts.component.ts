@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ACCOUNTS} from "../mock-accounts";
 import {Account} from "../account";
 
@@ -8,6 +8,7 @@ import {Account} from "../account";
   styleUrls: ['./accounts.component.css']
 })
 export class AccountsComponent {
+  @Input() maxHeight: number = 300; // Default max height, can be overridden
   accounts = ACCOUNTS;
   selectedAccount?: Account;
 
