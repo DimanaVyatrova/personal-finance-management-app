@@ -18,6 +18,11 @@ import { TransactionsTableComponent } from './transactions-table/transactions-ta
 import { TransactionsComponent } from './transactions/transactions.component';
 import {MatCardModule} from "@angular/material/card";
 import { VaultComponent } from './vault/vault.component';
+import { CheckingAccountFormComponent } from './checking-account-form/checking-account-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { InvestmentAccountFormComponent } from './investment-account-form/investment-account-form.component';
+import { SavingAccountFormComponent } from './saving-account-form/saving-account-form.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -29,6 +34,9 @@ import { VaultComponent } from './vault/vault.component';
     AccountsComponent,
     TransactionsComponent,
     VaultComponent,
+    CheckingAccountFormComponent,
+    InvestmentAccountFormComponent,
+    SavingAccountFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +49,9 @@ import { VaultComponent } from './vault/vault.component';
     MatPaginatorModule,
     MatInputModule,
     TransactionsTableComponent,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

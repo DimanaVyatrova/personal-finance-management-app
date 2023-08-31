@@ -4,7 +4,7 @@ import {MatSort, Sort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
-import {TRANSACTIONS} from "../mock-transactions";
+import {TRANSACTIONS} from "../mock-models-data/mock-transactions";
 
 
 const ELEMENT_DATA = TRANSACTIONS;

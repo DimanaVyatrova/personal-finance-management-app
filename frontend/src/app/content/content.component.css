@@ -1,11 +1,19 @@
 .wrapper {
   background: #BC9393;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .vaults-container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+app-transactions {
+  width: 100%;
 }
 
 

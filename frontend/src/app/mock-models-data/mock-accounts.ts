@@ -1,4 +1,4 @@
-import { Account } from './account';
+import { Account } from '../models/account';
 
 export const ACCOUNTS: Account[] = [
   { id: 12, name: 'Dr. Nice', balance: 0 },

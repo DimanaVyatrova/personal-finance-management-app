@@ -1,4 +1,4 @@
-import { Transaction } from './transaction';
+import { Transaction } from '../models/transaction';
 
 // export const TRANSACTIONS: ({ date: string; amount: number; goal: string; isRecurring: boolean; id: number } | { date: string; amount: number; goal: string; isRecurring: boolean; id: number } | { date: string; amount: number; goal: string; isRecurring: boolean; id: number })[] = [
 //   { id: 12, date: '11.01.2001', amount: 15.57, goal: 'Dr. Nice', isRecurring: false },
