@@ -7,12 +7,22 @@ import {Budget} from "../models/budget";
   styleUrls: ['./side-nav-item.component.css']
 })
 export class SideNavItemComponent {
-  addBudgetClicked = false
+  addBudgetClicked = false;
 
-  budgets : Budget[] = []
+  budgets : Budget[] = [];
+
+  type : string = 'budget';
+
+  clickedBudgetName : string = 'food';
 
   onBudgetClick() {
-    this.addBudgetClicked = true
+    this.addBudgetClicked = true;
     console.log(this.addBudgetClicked)
+  }
+
+  setClickedBudgetName(name : string) {
+    this.clickedBudgetName = name;
+    this.addBudgetClicked = false;
+    console.log('clicked budget name ' + this.clickedBudgetName);
   }
 }

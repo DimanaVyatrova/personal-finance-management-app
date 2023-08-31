@@ -1,6 +1,7 @@
 package com.example.finalproject.service;
 
 
+import com.example.finalproject.model.accounts.SavingsAccount;
 import com.example.finalproject.model.goal.Goal;
 import com.example.finalproject.repository.GoalRepository;
 import org.springframework.beans.factory.annotation.Autowired;

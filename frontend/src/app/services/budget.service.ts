@@ -28,6 +28,12 @@ export class BudgetService {
     return this.http.get('/api/budgets/1');
   }
 
+  getBudgetByName(name : string) : Observable<any>
+  {
+    console.log('request name ' + name);
+    return this.http.get('/api/budgets/name/' + name);
+  }
+
   getBugets() : Observable<any> {
     return this.http.get('/api/budgets')
   }

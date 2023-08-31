@@ -32,7 +32,7 @@ public class GoalController {
         return goalService.getAllGoals().stream().map(goalMapper::toDto).toList();
     }
 
-    @GetMapping("{name}")
+    @GetMapping("/name/{name}")
     public GoalDto getGoalByName(@PathVariable String name) {
         return goalMapper.toDto(goalService.getGoalByName(name));
     }

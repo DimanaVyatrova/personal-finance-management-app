@@ -14,6 +14,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { GoalComponent } from './goal/goal.component';
+import { SideNavGoalComponent } from './side-nav-goal/side-nav-goal.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {FormsModule} from "@angular/forms";
     SideNavigatorComponent,
     BudgetFormComponent,
     SideNavItemComponent,
+    GoalComponent,
+    SideNavGoalComponent,
   ],
   imports: [
     AppRoutingModule,

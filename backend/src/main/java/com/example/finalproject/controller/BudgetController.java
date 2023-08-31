@@ -33,6 +33,11 @@ public class BudgetController {
         return budgetMapper.toDto(budgetService.getBudgetById(id));
     }
 
+    @GetMapping("name/{name}")
+    public BudgetDto getBudgetByName(@PathVariable String name) {
+        return budgetMapper.toDto(budgetService.getBudgetByName(name));
+    }
+
     @PostMapping()
     public void createBudget(@RequestBody BudgetDto budgetDto) {
         User user = userService.getUserById(budgetDto.getUserId());

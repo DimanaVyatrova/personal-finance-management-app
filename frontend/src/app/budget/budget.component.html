@@ -1,7 +1,7 @@
 <mat-card class="example-card">
   <mat-card-header>
     <mat-card-subtitle>Budget</mat-card-subtitle>
-    <mat-card-title>Food</mat-card-title>
+    <mat-card-title>{{data.name}}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <div class="info">
@@ -22,7 +22,7 @@
     <mat-divider></mat-divider>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>EDIT</button>
-    <button mat-button>DELETE</button>
+    <button mat-button (click)="onEditClick()">EDIT</button>
+    <button mat-button (click)="onDeleteClick()">DELETE</button>
   </mat-card-actions>
 </mat-card>

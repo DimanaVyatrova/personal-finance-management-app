@@ -1,0 +1,36 @@
+mat-card {
+  /*width: 45%;*/
+  margin: auto;
+  background-color: rgba(243, 241, 236, 0.35);
+}
+
+.titles, .values {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /*margin-left: 180px;*/
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  font-weight: normal;
+  font-size: medium;
+}
+
+.values {
+  align-items: flex-end;
+  font-weight: bold;
+}
+
+.info {
+  display: flex;
+  gap: 40%;
+  justify-content: center;
+}
+
+mat-card-header {
+  background-color: rgb(243, 241, 236);
+}
+
+mat-card {
+  /*margin-top: 40px;*/
+}
