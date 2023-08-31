@@ -36,6 +36,9 @@ export class GoalComponent {
   }
 
   onDeleteClick() {
-
+    this.goalService.deleteGoalByName(this.data.name).subscribe((res) => {
+      console.log(res);
+      this.ngOnInit();
+    });;
   }
 }

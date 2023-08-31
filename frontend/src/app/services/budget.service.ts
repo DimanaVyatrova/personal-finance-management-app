@@ -52,4 +52,8 @@ export class BudgetService {
     }).subscribe();
   }
 
+  deleteBudgetByName(name : string) {
+    return this.http.delete('/api/budgets/name/' + name);
+  }
+
 }

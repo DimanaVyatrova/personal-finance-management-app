@@ -22,15 +22,3 @@ form {
   flex-direction: column;
   width: 100%;
 }
-
-span {
-  margin-left: 60px;
-  background-color: #fa99ad;
-  border-radius: 30%;
-  padding: 4px;
-  margin-bottom: 7px;
-}
-
-.cats {
-  margin-bottom: 20px;
-}

@@ -40,8 +40,7 @@ public class BudgetService {
         budgetRepository.save(budget);
     }
 
-    public void deleteBudget(Long id) {
-        System.out.println(getBudgetById(id));
+    public void deleteBudgetById(Long id) {
         List<Category> allCategories = categoryService.getAllCategories();
 
         for (Category c : allCategories) {
@@ -50,5 +49,17 @@ public class BudgetService {
             }
         }
         budgetRepository.deleteById(id);
+    }
+
+    public void deleteBudgetByName(String name) {
+        System.out.println(getBudgetByName(name));
+        List<Category> allCategories = categoryService.getAllCategories();
+
+        for (Category c : allCategories) {
+            if (c.getBudget().getId().equals(getBudgetByName(name).getId())) {
+                categoryService.deleteCategoryById(c.getId());
+            }
+        }
+        budgetRepository.deleteById(getBudgetByName(name).getId());
     }
 }

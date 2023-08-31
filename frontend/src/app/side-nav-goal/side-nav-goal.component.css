@@ -16,7 +16,7 @@ app-goal {
   flex-grow: 3;
 }
 
-app-budget-form, .form {
+app-goal-form, .form {
   flex-grow: 3;
 }
 

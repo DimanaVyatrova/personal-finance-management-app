@@ -48,7 +48,7 @@ public class GoalController {
         goalService.updateGoal(goalMapper.toEntity(goalDto, user));
     }
 
-    @DeleteMapping("{name}")
+    @DeleteMapping("/name/{name}")
     public void deleteGoalByName(@PathVariable String name) {
         goalService.deleteGoalByName(name);
     }

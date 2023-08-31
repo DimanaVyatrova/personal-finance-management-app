@@ -18,7 +18,16 @@ export class BudgetFormComponent {
   userId: number = 1;
   categories : string[] = ['cat1','cat2'];
 
+  category = new FormControl('');
+
+  selectedCategories = new Set<string>();
+
   constructor(private budgetService : BudgetService) { }
+
+  onCategoryOptionClick(category) {
+    this.selectedCategories.add(category);
+    console.log(this.selectedCategories);
+  }
 
   onSubmit(data : any) {
     console.log(data);
@@ -28,10 +37,10 @@ export class BudgetFormComponent {
     this.currentAmount = data.limitAmount;
     this.reccuringPeriod = data.type;
     this.periodStart = data.startDate;
-    this.periodEnd = "2023-09-09"
+    this.periodEnd = "2023-09-09";
 
 
     this.budgetService.addBudget(this.currentAmount, this.limitAmount, this.name, this.periodEnd,
-      this.periodStart, this.reccuringPeriod, this.userId, this.categories);
+      this.periodStart, this.reccuringPeriod, this.userId, Array.from(this.selectedCategories));
   }
 }

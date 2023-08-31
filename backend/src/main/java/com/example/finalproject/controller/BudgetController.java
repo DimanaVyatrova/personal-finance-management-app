@@ -58,6 +58,11 @@ public class BudgetController {
 
     @DeleteMapping("{id}")
     public void deleteBudget(@PathVariable Long id) {
-        budgetService.deleteBudget(id);
+        budgetService.deleteBudgetById(id);
+    }
+
+    @DeleteMapping("/name/{name}")
+    public void deleteBudgetByName(@PathVariable String name) {
+        budgetService.deleteBudgetByName(name);
     }
 }

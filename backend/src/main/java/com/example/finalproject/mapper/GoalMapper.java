@@ -32,7 +32,7 @@ public class GoalMapper {
             saveGoal.setName(dto.getName());
             saveGoal.setGoalAmount(dto.getGoalAmount());
             saveGoal.setCurrentAmount(dto.getCurrentAmount());
-            saveGoal.setSavingsAccount((SavingsAccount) accountService.getAccountByName(dto.getSavingsAccountName()));
+            //saveGoal.setSavingsAccount((SavingsAccount) accountService.getAccountByName(dto.getSavingsAccountName()));
             return saveGoal;
         }
     }
@@ -56,7 +56,7 @@ public class GoalMapper {
             goalDto.setCurrentAmount(goal.getCurrentAmount());
             goalDto.setUserId(goal.getUser().getId());
             goalDto.setPayee(null);
-            goalDto.setSavingsAccountName(((SaveGoal) goal).getSavingsAccount().getName());
+            //goalDto.setSavingsAccountName(((SaveGoal) goal).getSavingsAccount().getName());
         }
 
         return goalDto;

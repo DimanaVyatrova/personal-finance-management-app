@@ -15,7 +15,7 @@
       <mat-label>Type</mat-label>
       <mat-select name="type" ngModel>
         <mat-option value="MONTHLY">MONTHLY</mat-option>
-        <mat-option value="YEARLY">YEARLY</mat-option>
+        <mat-option value="ANNUALLY">ANNUALLY</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
@@ -24,11 +24,15 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Categories</mat-label>
-      <mat-select name="category" ngModel>
-        <mat-option value="one">one</mat-option>
-        <mat-option value="two">two</mat-option>
+      <mat-select [formControl]="category" name="category" ngModel>
+        <mat-option value="one" (click)="onCategoryOptionClick(category.value)">one</mat-option>
+        <mat-option value="two" (click)="onCategoryOptionClick(category.value)">two</mat-option>
+        <mat-option value="three" (click)="onCategoryOptionClick(category.value)">three</mat-option>
       </mat-select>
     </mat-form-field>
+    <div class="cats" *ngFor="let category of selectedCategories">
+      <span>{{category}}</span>
+    </div>
     <mat-form-field>
       <mat-label>Add a New Category</mat-label>
       <input matInput>

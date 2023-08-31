@@ -31,7 +31,10 @@ export class BudgetComponent {
   }
 
   onDeleteClick() {
-
+    this.budgetService.deleteBudgetByName(this.data.name).subscribe((res) => {
+      console.log(res);
+      this.ngOnInit();
+    });
   }
 
   onEditClick() {

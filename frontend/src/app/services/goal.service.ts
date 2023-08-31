@@ -24,4 +24,21 @@ export class GoalService {
   getGoals() : Observable<any> {
     return this.http.get('/api/goals')
   }
+
+  addGoal(goalType: string | null, currentAmount: number, goalAmount: number, name: string,
+          payee: string, userId: number, savingAccountName: string){
+    return this.http.post('/api/goals',{
+      goalType,
+      currentAmount,
+      goalAmount,
+      name,
+      payee,
+      userId,
+      savingAccountName
+    }).subscribe();
+  }
+
+  deleteGoalByName(name: string) {
+    return this.http.delete('/api/goals/name/' + name);
+  }
 }
