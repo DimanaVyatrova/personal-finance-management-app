@@ -9,6 +9,7 @@
         <p class="field">Limit amount</p>
         <p class="field">Remaining</p>
         <p class="field">Type</p>
+        <p class="field">Start date</p>
         <p class="field">End date</p>
         <p class="field">Categories</p>
       </div>
@@ -16,6 +17,7 @@
         <p class="val">{{data.limitAmount}}</p>
         <p class="val">{{data.currentAmount}}</p>
         <p class="val">{{data.reccuringPeriod}}</p>
+        <p class="val">{{data.periodStart}}</p>
         <p class="val">{{data.periodEnd}}</p>
         <div class="categories">
           <p class="ind-cat" *ngFor="let cat of budgetCategories">{{cat}}</p>
