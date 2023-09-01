@@ -1,0 +1,34 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-subtitle>Budget</mat-card-subtitle>
+    <mat-card-title>{{data.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="info">
+      <div class="titles">
+        <p class="field">Limit amount</p>
+        <p class="field">Remaining</p>
+        <p class="field">Type</p>
+        <p class="field">End date</p>
+        <p class="field">Categories</p>
+      </div>
+      <div class="values">
+        <p class="val">{{data.limitAmount}}</p>
+        <p class="val">{{data.currentAmount}}</p>
+        <p class="val">{{data.reccuringPeriod}}</p>
+        <p class="val">{{data.periodEnd}}</p>
+        <div class="categories">
+          <p class="ind-cat" *ngFor="let cat of budgetCategories">{{cat}}</p>
+        </div>
+      </div>
+    </div>
+    <p class="field">Used Up Money <span>{{budgetExpenses}} / {{data.limitAmount}}</span></p>
+    <mat-progress-bar mode="determinate" value="{{percentage}}"></mat-progress-bar>
+    <p class="warn" *ngIf="budgetExpenses > data.limitAmount">You have exceeded your budget!</p>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="onEditClick()">EDIT</button>
+    <button mat-button (click)="onDeleteClick()">DELETE</button>
+  </mat-card-actions>
+</mat-card>

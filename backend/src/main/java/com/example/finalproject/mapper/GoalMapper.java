@@ -2,14 +2,18 @@ package com.example.finalproject.mapper;
 
 import com.example.finalproject.dto.GoalDto;
 import com.example.finalproject.model.User;
+import com.example.finalproject.model.accounts.SavingsAccount;
 import com.example.finalproject.model.goal.Goal;
 import com.example.finalproject.model.goal.PayGoal;
 import com.example.finalproject.model.goal.SaveGoal;
+import com.example.finalproject.service.AccountService;
+import com.example.finalproject.service.GoalService;
 import org.springframework.stereotype.Component;
 
 
 @Component
 public class GoalMapper {
+    AccountService accountService;
 
     public Goal toEntity(GoalDto dto, User user) {
         if (dto.getGoalType().equals("PAY")) {
@@ -28,6 +32,7 @@ public class GoalMapper {
             saveGoal.setName(dto.getName());
             saveGoal.setGoalAmount(dto.getGoalAmount());
             saveGoal.setCurrentAmount(dto.getCurrentAmount());
+            //saveGoal.setSavingsAccount((SavingsAccount) accountService.getAccountByName(dto.getSavingsAccountName()));
             return saveGoal;
         }
     }
@@ -51,7 +56,7 @@ public class GoalMapper {
             goalDto.setCurrentAmount(goal.getCurrentAmount());
             goalDto.setUserId(goal.getUser().getId());
             goalDto.setPayee(null);
-            //goalDto.setSavingsAccountId(((SaveGoal) goal).getSavingsAccount().getId());
+            //goalDto.setSavingsAccountName(((SaveGoal) goal).getSavingsAccount().getName());
         }
 
         return goalDto;

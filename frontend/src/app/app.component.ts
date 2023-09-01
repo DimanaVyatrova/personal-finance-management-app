@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontend';
+  addBudgetClicked = false
+
+  clickAddBudget() {
+    this.addBudgetClicked = !this.addBudgetClicked
+  }
+
+  public url: any;
+
+  constructor(private router: Router) {
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.url = event.url;
+      }
+    })
+  }
 }

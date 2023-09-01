@@ -12,5 +12,5 @@ public class GoalDto {
     private String name;
     private String payee;
     private Long userId;
-    //private Long savingsAccountId; //moje da se promeni na ime na savings account
+    private String savingsAccountName; //moje da se promeni na ime na savings account
 }
