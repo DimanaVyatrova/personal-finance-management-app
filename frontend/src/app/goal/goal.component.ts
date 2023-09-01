@@ -1,7 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Budget} from "../models/budget";
 import {Goal} from "../models/goal";
-import {BudgetService} from "../services/budget.service";
 import {GoalService} from "../services/goal.service";
 
 @Component({

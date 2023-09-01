@@ -10,7 +10,7 @@ import { BudgetFormComponent } from './budget-form/budget-form.component';
 import { SideNavItemComponent } from './side-nav-item/side-nav-item.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { GoalComponent } from './goal/goal.component';
 import { SideNavGoalComponent } from './side-nav-goal/side-nav-goal.component';

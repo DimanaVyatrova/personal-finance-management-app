@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Budget} from "../models/budget";
 import {Goal} from "../models/goal";
 
 @Component({
