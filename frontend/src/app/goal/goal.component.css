@@ -34,3 +34,10 @@ mat-card-header {
 mat-card {
   /*margin-top: 40px;*/
 }
+
+.congratulate {
+  color: #13008b;
+  background-color: #a7b9ce;
+  font-weight: bolder;
+  padding: 3px;
+}

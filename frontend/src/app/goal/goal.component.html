@@ -20,6 +20,9 @@
         <p class="field" *ngIf="data.goalType == 'SAVE'">{{data.savingsAccountName}}</p>
       </div>
     </div>
+    <p class="field">Goal Completeness</p>
+    <mat-progress-bar mode="determinate" value="{{percentage}}"></mat-progress-bar>
+    <p class="congratulate" *ngIf="percentage == 100">You achieved you goal!</p>
     <mat-divider></mat-divider>
   </mat-card-content>
   <mat-card-actions>

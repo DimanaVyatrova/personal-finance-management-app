@@ -13,12 +13,18 @@
         <p class="field">Categories</p>
       </div>
       <div class="values">
-        <p>{{data.limitAmount}}</p>
-        <p>{{data.currentAmount}}</p>
-        <p>{{data.reccuringPeriod}}</p>
-        <p>{{data.periodEnd}}</p>
+        <p class="val">{{data.limitAmount}}</p>
+        <p class="val">{{data.currentAmount}}</p>
+        <p class="val">{{data.reccuringPeriod}}</p>
+        <p class="val">{{data.periodEnd}}</p>
+        <div class="categories">
+          <p class="ind-cat" *ngFor="let cat of budgetCategories">{{cat}}</p>
+        </div>
       </div>
     </div>
+    <p class="field">Used Up Money <span>{{budgetExpenses}} / {{data.limitAmount}}</span></p>
+    <mat-progress-bar mode="determinate" value="{{percentage}}"></mat-progress-bar>
+    <p class="warn" *ngIf="budgetExpenses > data.limitAmount">You have exceeded your budget!</p>
     <mat-divider></mat-divider>
   </mat-card-content>
   <mat-card-actions>

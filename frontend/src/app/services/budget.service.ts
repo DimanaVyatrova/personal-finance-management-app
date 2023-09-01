@@ -22,20 +22,26 @@ export class BudgetService {
 
   constructor(private http: HttpClient) { }
 
-  getBudget(id : number) : Observable<any>
-  {
+  getBudget(id : number) : Observable<any> {
     const params = new HttpParams().set('id', id)
     return this.http.get('/api/budgets/1');
   }
 
-  getBudgetByName(name : string) : Observable<any>
-  {
+  getBudgetByName(name : string) : Observable<any> {
     console.log('request name ' + name);
     return this.http.get('/api/budgets/name/' + name);
   }
 
   getBugets() : Observable<any> {
     return this.http.get('/api/budgets')
+  }
+
+  getBudgetCategories(name : string) : Observable<any>{
+    return this.http.get('/api/budgets/categories/' + name);
+  }
+
+  getBudgetExpenses(name : string) : Observable<any> {
+    return this.http.get('/api/budgets/expenses/' + name);
   }
 
   addBudget(currentAmount: number, limitAmount: number, name: string, periodEnd: string,

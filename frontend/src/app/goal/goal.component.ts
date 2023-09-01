@@ -11,7 +11,7 @@ import {GoalService} from "../services/goal.service";
 })
 export class GoalComponent {
   public data : Goal = {} as Goal;
-
+  percentage : number = 0;
 
   @Input() clickedGoalName : string = 'Pay Off Car';
 
@@ -28,6 +28,10 @@ export class GoalComponent {
   ngOnChanges() {
     this.goalService.getGoalByName(this.clickedGoalName).subscribe((result) => {
       this.data = result;
+      this.percentage = this.data.goalAmount /this.data.currentAmount;
+      if (this.data.currentAmount >= this.data.goalAmount) {
+        this.percentage = 100;
+      }
     });
   }
 

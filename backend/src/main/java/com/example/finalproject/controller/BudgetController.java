@@ -38,6 +38,16 @@ public class BudgetController {
         return budgetMapper.toDto(budgetService.getBudgetByName(name));
     }
 
+    @GetMapping("categories/{name}")
+    public List<String> getBudgetCategoriesByName(@PathVariable String name) {
+        return budgetService.getBudgetCategoriesByName(name);
+    }
+
+    @GetMapping("expenses/{name}")
+    public Double getTransactionsForBudgetAsTotalNumber(@PathVariable String name) {
+        return budgetService.getTransactionsForBudgetAsTotalNumber(name);
+    }
+
     @PostMapping()
     public void createBudget(@RequestBody BudgetDto budgetDto) {
         User user = userService.getUserById(budgetDto.getUserId());

@@ -34,3 +34,37 @@ mat-card-header {
 mat-card {
   /*margin-top: 40px;*/
 }
+
+.categories {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ind-cat {
+  background-color: #9ba146;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 10%;
+  box-shadow: 1px 2px 2px #888888;
+  font-weight: normal;
+}
+
+span {
+  background-color: #c7c7c7;
+  padding: 2px 3px;
+  border-radius: 8%;
+}
+
+mat-progress-bar {
+  margin-bottom: 20px;
+}
+
+.warn {
+  color: darkred;
+  background-color: #cea7a7;
+  font-weight: bolder;
+  padding: 3px;
+}
+

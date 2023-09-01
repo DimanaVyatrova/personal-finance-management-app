@@ -14,6 +14,10 @@ export class BudgetComponent {
 
   @Input() clickedBudgetName : string = 'food';
 
+  budgetCategories : string[] = [];
+  budgetExpenses : number = 0;
+  percentage : number = 0;
+
   constructor(private budgetService : BudgetService) { }
 
   ngOnInit() {
@@ -28,6 +32,18 @@ export class BudgetComponent {
     this.budgetService.getBudgetByName(this.clickedBudgetName).subscribe((result) => {
       this.data = result;
     });
+    this.budgetService.getBudgetCategories(this.clickedBudgetName).subscribe((result) =>{
+      this.budgetCategories = result;
+    });
+    this.budgetService.getBudgetExpenses(this.clickedBudgetName).subscribe((result) => {
+      this.budgetExpenses = result;
+      this.data.currentAmount = this.data.limitAmount - this.budgetExpenses;
+      if (this.data.currentAmount < 0) {
+        this.data.currentAmount = 0;
+      }
+      this.percentage = (this.budgetExpenses / this.data.limitAmount) * 100;
+      console.log(this.percentage);
+    })
   }
 
   onDeleteClick() {

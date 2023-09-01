@@ -28,6 +28,10 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
+    public List<Category> getCategoriesOfBudget(Long budgetId) {
+        return categoryRepository.findCategoriesByBudget_Id(budgetId);
+    }
+
     public void deleteCategoryById(Long id) {
         categoryRepository.deleteById(id);
     }
