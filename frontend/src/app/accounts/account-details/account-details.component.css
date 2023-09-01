@@ -8,8 +8,18 @@ header {
 
 h1, h3 {
   margin: 0;
+  padding-right: 1rem;
 }
 
 app-transactions-table {
   width: 100%;
+}
+
+.name-actions {
+  display: flex;
+}
+
+.icon-button {
+  padding-top: 0;
+  color: #e6e6e6;
 }
