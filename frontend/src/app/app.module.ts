@@ -44,7 +44,7 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
     SideNavItemComponent,
     GoalComponent,
     SideNavGoalComponent,
-    GoalFormComponent,
+    GoalFormComponent
   ],
   imports: [
     AppRoutingModule,
@@ -58,7 +58,6 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
     MatFormFieldModule,
     MatPaginatorModule,
     MatInputModule,
-    TransactionsTableComponent,
     MatCardModule,
     MatSelectModule,
     MatSlideToggleModule,
@@ -68,12 +67,12 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
     AccountsModule,
     TransactionsModule,
     AccountsPageModule,
-    AddButtonComponent,
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AddButtonComponent
   ],
   exports: [AppRoutingModule],
   providers: [],

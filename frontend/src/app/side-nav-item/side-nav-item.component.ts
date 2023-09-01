@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Budget} from "../models/budget";
+import { AddButtonComponent } from '../add-button/add-button.component';
 
 @Component({
   selector: 'app-side-nav-item',

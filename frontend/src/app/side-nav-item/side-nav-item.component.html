@@ -3,10 +3,11 @@
   <router-outlet></router-outlet>
   <div class="side">
     <app-side-navigator (clickedBudgetNameEvent)="setClickedBudgetName($event)" [type]="type"></app-side-navigator>
-    <button mat-fab extended class="add-button" (click)="onBudgetClick()">
+    <!--button mat-fab extended class="add-button" (click)="onBudgetClick()">
       <mat-icon>add</mat-icon>
       Add a Budget
-    </button>
+    </button-->
+    <app-add-button (click)="onBudgetClick()" [name]="type"></app-add-button>
   </div>
   <app-budget *ngIf="addBudgetClicked == false" [clickedBudgetName]="clickedBudgetName"></app-budget>
   <!--ng-template #elseBlock><app-budget-form></app-budget-form></ng-template-->
