@@ -6,25 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
-  budgetsClicked = true;
+  budgetsClicked = false;
   goalsClicked = false;
+  accountClicked = true;
 
-  onBudgetsClick() {
-    this.budgetsClicked = true;
-    this.goalsClicked = false;
-
-  }
-
-  onGoalsClick($event) {
+  onClick($event) {
     console.log($event);
     if ($event.tab.textLabel === 'Budgets') {
       this.budgetsClicked = true;
       this.goalsClicked = false;
+      this.accountClicked = false;
       console.log('budgets ' + this.budgetsClicked + ',goals ' + this.goalsClicked);
     }
     if ($event.tab.textLabel === 'Goals') {
       this.budgetsClicked = false;
       this.goalsClicked = true;
+      this.accountClicked = false;
+      console.log('budgets ' + this.budgetsClicked + ',goals ' + this.goalsClicked);
+    }
+    if ($event.tab.textLabel === 'Accounts') {
+      this.budgetsClicked = false;
+      this.goalsClicked = false;
+      this.accountClicked = true;
       console.log('budgets ' + this.budgetsClicked + ',goals ' + this.goalsClicked);
     }
     console.log('on goals click');

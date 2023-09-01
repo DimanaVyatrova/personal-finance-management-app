@@ -1,4 +1,4 @@
-<mat-tab-group (selectedTabChange)="onGoalsClick($event)">
+<mat-tab-group (selectedTabChange)="onClick($event)">
   <mat-tab label="Accounts"></mat-tab>
   <mat-tab label="Budgets"></mat-tab>
   <mat-tab label="Goals"></mat-tab>
@@ -6,4 +6,4 @@
 
 <app-side-nav-item *ngIf="budgetsClicked === true"></app-side-nav-item>
 <app-side-nav-goal *ngIf="goalsClicked === true"></app-side-nav-goal>
-
+<app-accounts-page-content class="content" *ngIf="accountClicked === true"></app-accounts-page-content>

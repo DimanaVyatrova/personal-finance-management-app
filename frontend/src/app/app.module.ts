@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatIconModule} from "@angular/material/icon";
 import { AddButtonComponent } from './add-button/add-button.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatPaginatorModule} from "@angular/material/paginator";
@@ -69,7 +68,7 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
     AccountsModule,
     TransactionsModule,
     AccountsPageModule,
-    AddButtonComponent
+    AddButtonComponent,
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
@@ -78,8 +77,6 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
   ],
   exports: [AppRoutingModule],
   providers: [],
-  exports: [
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
