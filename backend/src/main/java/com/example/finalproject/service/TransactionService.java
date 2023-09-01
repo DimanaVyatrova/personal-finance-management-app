@@ -37,4 +37,8 @@ public class TransactionService {
     public List<Transaction> getTransactionsInAccount(Long accountId) {
         return transactionRepository.findAllByIdIn(transactionAccountService.findTransactionIdsByAccountId(accountId));
     }
+
+    public void deleteTransaction(Long id) {
+        transactionRepository.deleteById(id);
+    }
 }

@@ -37,4 +37,9 @@ public class TransactionController {
     public void createTransaction (@RequestBody TransactionDto transactionDto) {
         transactionService.createTransaction(transactionMapper.toEntity(transactionDto));
     }
+
+    @DeleteMapping("{id}")
+    public void deleteTransaction(@PathVariable Long id) {
+        transactionService.deleteTransaction(id);
+    }
 }
