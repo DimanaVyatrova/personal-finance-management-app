@@ -1,0 +1,36 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem;
+  margin: 2rem 0;
+  justify-self: center;
+  align-self: center;
+  /*background-color: #BC9393;*/
+}
+
+mat-card-title {
+  margin-bottom: 2rem;
+}
+
+mat-card-actions {
+  width: 100%;
+  justify-content: center;
+}
+
+mat-card-content, form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 50%;
+}

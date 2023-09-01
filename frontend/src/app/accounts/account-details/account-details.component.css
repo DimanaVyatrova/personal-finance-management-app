@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin: 0;
+}
+
+h1, h3 {
+  margin: 0;
+  padding-right: 1rem;
+}
+
+app-transactions-table {
+  width: 100%;
+}
+
+.name-actions {
+  display: flex;
+}
+
+.icon-button {
+  padding-top: 0;
+  /*color: #e6e6e6;*/
+  color: #9ba146;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

@@ -32,7 +32,7 @@ public class GoalController {
         return goalService.getAllGoals().stream().map(goalMapper::toDto).toList();
     }
 
-    @GetMapping("{name}")
+    @GetMapping("/name/{name}")
     public GoalDto getGoalByName(@PathVariable String name) {
         return goalMapper.toDto(goalService.getGoalByName(name));
     }
@@ -42,13 +42,18 @@ public class GoalController {
         return goalMapper.toDto(goalService.getGoalById(id));
     }
 
+    /*@GetMapping("transactions/pay/{name}")
+    public Double getTransactionsForPayGoalByPayee(@PathVariable String name) {
+
+    }*/
+
     @PutMapping()
     public void updateGoal(@RequestBody GoalDto goalDto) {
         User user = userService.getUserById(goalDto.getUserId());
         goalService.updateGoal(goalMapper.toEntity(goalDto, user));
     }
 
-    @DeleteMapping("{name}")
+    @DeleteMapping("/name/{name}")
     public void deleteGoalByName(@PathVariable String name) {
         goalService.deleteGoalByName(name);
     }

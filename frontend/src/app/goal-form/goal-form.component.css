@@ -1,0 +1,24 @@
+mat-card {
+  display: flex;
+  margin: auto;
+  background-color: rgba(243, 241, 236, 0.35);
+  padding-bottom: 20px;
+  justify-content: center;
+}
+
+mat-form-field, button {
+  width: 90%;
+  align-self: center;
+}
+
+mat-card-header {
+  margin-bottom: 20px;
+  background-color: rgb(239, 234, 220);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}

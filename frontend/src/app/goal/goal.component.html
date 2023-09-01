@@ -1,0 +1,32 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-subtitle>Goal</mat-card-subtitle>
+    <mat-card-title>{{data.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="info">
+      <div class="titles">
+        <p class="field">Goal Type</p>
+        <p class="field">Goal Amount</p>
+        <p class="field">Current Amount</p>
+        <p class="field" *ngIf="data.goalType == 'PAY'">Payee</p>
+        <p class="field" *ngIf="data.goalType == 'SAVE'">Savings Account</p>
+      </div>
+      <div class="values">
+        <p>{{data.goalType}}</p>
+        <p>{{data.goalAmount}}</p>
+        <p>{{data.currentAmount}}</p>
+        <p *ngIf="data.goalType == 'PAY'">{{data.payee}}</p>
+        <p class="field" *ngIf="data.goalType == 'SAVE'">{{data.savingsAccountName}}</p>
+      </div>
+    </div>
+    <p class="field">Goal Completeness</p>
+    <mat-progress-bar mode="determinate" value="{{percentage}}"></mat-progress-bar>
+    <p class="congratulate" *ngIf="percentage == 100">You achieved you goal!</p>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="onEditClick()">EDIT</button>
+    <button mat-button (click)="onDeleteClick()">DELETE</button>
+  </mat-card-actions>
+</mat-card>

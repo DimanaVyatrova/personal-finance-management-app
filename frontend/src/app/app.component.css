@@ -1,0 +1,25 @@
+app-navbar {
+  grid-area: navbar;
+}
+
+.content {
+  grid-area: content;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  column-gap: 4rem;
+  row-gap: 1rem;
+  grid-template-columns: .5fr 50fr .5fr;
+  grid-template-rows: 2fr 14fr 1fr;
+  grid-template-areas:
+    "navbar navbar navbar"
+    "... content ..."
+    "... ... ...";
+
+
+  /*background-color: #fff;*/
+  /*color: #444;*/
+}

@@ -1,0 +1,9 @@
+<div class="menu">
+  <div class="normal-menu" *ngIf="type === 'budget'">
+    <button mat-button class="normal" *ngFor="let item of budgets" (click)="getNameOfClickedBudget(item.name)">{{item.name}}</button>
+  </div>
+  <div class="normal-menu" *ngIf="type === 'goal'" >
+    <button mat-button *ngFor="let item of goals" class="normal" (click)="getNameOfClickedBudget(item.name)">{{item.name}}</button>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,7 +1,9 @@
 package com.example.finalproject.service;
 
 
+import com.example.finalproject.model.accounts.SavingsAccount;
 import com.example.finalproject.model.goal.Goal;
+import com.example.finalproject.model.goal.SaveGoal;
 import com.example.finalproject.repository.GoalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +34,9 @@ public class GoalService {
     public Goal getGoalById(Long id) {
         return goalRepository.findById(id).get();
     }
+
+    /*public Double getTransactionsForPayGoalByPayee(String goalName) {
+    }*/
 
     public void updateGoal(Goal goal) {
         goal.setId(getGoalByName(goal.getName()).getId());

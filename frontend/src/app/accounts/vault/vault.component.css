@@ -1,0 +1,27 @@
+mat-card {
+  flex: 1;
+  margin: 1rem 2rem;
+  padding: .5rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "header content"
+    "button content";
+}
+
+mat-card-header {
+  text-align: center;
+  grid-area: header;
+}
+
+mat-card-content {
+  grid-area: content;
+}
+
+mat-card-actions {
+  grid-area: button;
+}
+
+app-add-button {
+  width: 100%;
+}

@@ -33,6 +33,21 @@ public class BudgetController {
         return budgetMapper.toDto(budgetService.getBudgetById(id));
     }
 
+    @GetMapping("name/{name}")
+    public BudgetDto getBudgetByName(@PathVariable String name) {
+        return budgetMapper.toDto(budgetService.getBudgetByName(name));
+    }
+
+    @GetMapping("categories/{name}")
+    public List<String> getBudgetCategoriesByName(@PathVariable String name) {
+        return budgetService.getBudgetCategoriesByName(name);
+    }
+
+    @GetMapping("expenses/{name}")
+    public Double getTransactionsForBudgetAsTotalNumber(@PathVariable String name) {
+        return budgetService.getTransactionsForBudgetAsTotalNumber(name);
+    }
+
     @PostMapping()
     public void createBudget(@RequestBody BudgetDto budgetDto) {
         User user = userService.getUserById(budgetDto.getUserId());
@@ -53,6 +68,11 @@ public class BudgetController {
 
     @DeleteMapping("{id}")
     public void deleteBudget(@PathVariable Long id) {
-        budgetService.deleteBudget(id);
+        budgetService.deleteBudgetById(id);
+    }
+
+    @DeleteMapping("/name/{name}")
+    public void deleteBudgetByName(@PathVariable String name) {
+        budgetService.deleteBudgetByName(name);
     }
 }
