@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -33,4 +34,7 @@ public class TransactionService {
     }
 
 
+    public List<Transaction> getTransactionsInAccount(Long accountId) {
+        return transactionRepository.findAllByIdIn(transactionAccountService.findTransactionIdsByAccountId(accountId));
+    }
 }

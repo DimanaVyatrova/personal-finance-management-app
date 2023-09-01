@@ -45,7 +45,7 @@ public class TransactionMapper {
         transactionAccount.setAccount(accountService.getAccountById(transactionDto.getFirstAccountId()));
         transactionAccount.setTransaction(transaction);
 
-        TransactionType transactionType = transactionDto.getIsIncome() ? TransactionType.INCOME : TransactionType.EXPENSE;
+        TransactionType transactionType = TransactionType.valueOf(transactionDto.getTransactionType());
         transactionAccount.setTransactionType(transactionType);
         List<TransactionAccount> transactionAccounts = List.of(transactionAccount);
 
@@ -61,7 +61,23 @@ public class TransactionMapper {
         return Pair.of(transaction, transactionAccounts);
     }
 
-    public static TransactionDto toDto(Transaction transaction) {
-        return null;
+    public static TransactionDto toDto(Transaction transaction, Long firstAccountId) {
+        TransactionDto transactionDto = new TransactionDto();
+        transactionDto.setTransactionParty(transaction.getTransactionParty());
+        transactionDto.setId(transaction.getId());
+        transactionDto.setPeriod(transaction.getPeriod().toString());
+        transactionDto.setAmount(transaction.getAmount());
+        transactionDto.setCreatedAt(transaction.getCreatedAt().toString());
+        transactionDto.setCategoryId(transaction.getCategory().getId());
+        transactionDto.setFirstAccountId(firstAccountId);
+        transaction.getTransactionAccounts().forEach(transactionAccount -> {
+            if (!transactionAccount.getAccount().getId().equals(firstAccountId)) {
+                transactionDto.setOptionalAccountId(transactionAccount.getAccount().getId());
+            } else {
+                transactionDto.setTransactionType(transactionAccount.getTransactionType().toString());
+            }
+        });
+
+        return transactionDto;
     }
 }

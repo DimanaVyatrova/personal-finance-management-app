@@ -17,11 +17,19 @@ public class TransactionController {
     private TransactionService transactionService;
     private TransactionMapper transactionMapper;
 
+//    @GetMapping
+//    public List<TransactionDto> getTransactions() {
+//        return transactionService.getTransactions()
+//            .stream()
+//            .map(TransactionMapper::toDto)
+//            .toList();
+//    }
+
     @GetMapping
-    public List<TransactionDto> getTransactionsInAccount() {
-        return transactionService.getTransactions()
+    public List<TransactionDto> getTransactionsInAccount(@RequestParam Long accountId) {
+        return transactionService.getTransactionsInAccount(accountId)
             .stream()
-            .map(TransactionMapper::toDto)
+            .map(transaction -> TransactionMapper.toDto(transaction, accountId))
             .toList();
     }
 

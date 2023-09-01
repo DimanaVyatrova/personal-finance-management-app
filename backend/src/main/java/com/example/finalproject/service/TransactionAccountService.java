@@ -5,6 +5,8 @@ import com.example.finalproject.repository.TransactionAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TransactionAccountService {
     private final TransactionAccountRepository transactionAccountRepository;
@@ -17,5 +19,9 @@ public class TransactionAccountService {
 
     public void save(TransactionAccount transactionAccount) {
         transactionAccountRepository.save(transactionAccount);
+    }
+
+    public List<Long> findTransactionIdsByAccountId(Long accountId) {
+        return transactionAccountRepository.findAllByAccountIdIs(accountId);
     }
 }

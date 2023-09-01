@@ -13,7 +13,7 @@ public class TransactionDto {
     private Long categoryId;
     private Long firstAccountId;
     private Long optionalAccountId;
-    //    private String transactionType; //INCOME, EXPENSE
-    private Boolean isIncome;
+    private String transactionType; //INCOME, EXPENSE
+//    private Boolean isIncome;
     private Long id;
 }
