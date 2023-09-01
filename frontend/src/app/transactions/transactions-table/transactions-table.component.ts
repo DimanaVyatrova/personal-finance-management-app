@@ -5,6 +5,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
 import {TRANSACTIONS} from "../../mock-models-data/mock-transactions";
+import {MatIconModule} from "@angular/material/icon";
 
 
 const ELEMENT_DATA = TRANSACTIONS;
@@ -17,10 +18,11 @@ const ELEMENT_DATA = TRANSACTIONS;
   templateUrl: './transactions-table.component.html',
   styleUrls: ['./transactions-table.component.css'],
   standalone: true,
-  imports: [MatTableModule, MatSortModule, MatFormFieldModule, MatPaginatorModule],
+    imports: [MatTableModule, MatSortModule, MatFormFieldModule, MatPaginatorModule, MatIconModule],
 })
 export class TransactionsTableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['date', 'category', 'amount', 'budget', 'goal', 'notes', 'transactionParty','isRecurring'];
+  displayedColumns: string[] = ['date', 'category', 'amount', 'budget', 'goal', 'notes', 'transactionParty',
+    'isRecurring', 'edit', 'delete'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
@@ -50,5 +52,14 @@ export class TransactionsTableComponent implements AfterViewInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
+  }
+
+  edit(id: Number) {
+    console.log(id);
+  }
+
+  delete(id: Number) {
+    console.log(id);
+
   }
 }

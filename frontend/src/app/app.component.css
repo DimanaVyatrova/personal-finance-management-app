@@ -12,7 +12,7 @@ app-navbar {
   display: grid;
   column-gap: 4rem;
   row-gap: 1rem;
-  grid-template-columns: 1fr 50fr 1fr;
+  grid-template-columns: .5fr 50fr .5fr;
   grid-template-rows: 2fr 14fr 1fr;
   grid-template-areas:
     "navbar navbar navbar"

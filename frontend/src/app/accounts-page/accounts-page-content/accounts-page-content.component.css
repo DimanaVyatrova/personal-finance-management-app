@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
-  column-gap: 6rem;
+  column-gap: 5rem;
 }
 
 app-sidebar {
