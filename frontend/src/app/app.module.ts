@@ -15,7 +15,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { GoalComponent } from './goal/goal.component';
 import { SideNavGoalComponent } from './side-nav-goal/side-nav-goal.component';
 import { GoalFormComponent } from './goal-form/goal-form.component';
-import {NgApexchartsModule} from "ng-apexcharts";
 
 @NgModule({
   declarations: [
