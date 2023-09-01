@@ -1,0 +1,21 @@
+.wrapper {
+  /*background: #BC9393;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+app-account-details {
+  width: 100%;
+}
+
+.vaults-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+app-vault {
+  background-color: #BC9393;
+}

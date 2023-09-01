@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.action-column button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #BC9393;
+}

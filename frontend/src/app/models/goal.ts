@@ -1,4 +1,5 @@
 export interface Goal {
+  //id: number;
   goalType : string;
   currentAmount : number;
   goalAmount : number;

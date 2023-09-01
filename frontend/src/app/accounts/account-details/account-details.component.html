@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <header>
+    <div class="info">
+      <div class="name-actions">
+        <h1>First</h1>
+
+        <div class="actions">
+          <button mat-icon-button matTooltip="Click to Edit" class="icon-button" (click)="edit()">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="Click to Delete" class="icon-button" (click)="delete()">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+
+      </div>
+
+      <h3>Balance: 5000</h3>
+    </div>
+    <app-add-button name="transaction"></app-add-button>
+  </header>
+
+  <app-transactions-table></app-transactions-table>
+
+</div>
