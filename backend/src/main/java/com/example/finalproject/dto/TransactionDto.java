@@ -11,6 +11,9 @@ public class TransactionDto {
     private String period;
     private String transactionParty;
     private Long categoryId;
-    private Long accountId;
-    private String transactionType; //INCOME, EXPENSE
+    private Long firstAccountId;
+    private Long optionalAccountId;
+    //    private String transactionType; //INCOME, EXPENSE
+    private Boolean isIncome;
+    private Long id;
 }

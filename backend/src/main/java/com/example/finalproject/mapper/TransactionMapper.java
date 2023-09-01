@@ -12,6 +12,7 @@ import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Component
 public class TransactionMapper {
@@ -24,44 +25,43 @@ public class TransactionMapper {
         this.accountService = accountService;
     }
 
-    public Pair<Transaction, TransactionAccount> toEntity(TransactionDto transactionDto) {
+    public Pair<Transaction, List<TransactionAccount>> toEntity(TransactionDto transactionDto) {
         RecurringPeriod recurringPeriod = null;
         if (transactionDto.getPeriod() != null) {
-            if (transactionDto.getPeriod().equals("monthly")) {
-                recurringPeriod = RecurringPeriod.MONTHLY;
-            }
-            else if (transactionDto.getPeriod().equals("annualy")) {
-                recurringPeriod = RecurringPeriod.ANNUALLY;
-            }
-            else if (transactionDto.getPeriod().equals("weekly")) {
-                recurringPeriod = RecurringPeriod.WEEKLY;
-            }
-            else if (transactionDto.getPeriod().equals("quaterly")) {
-                recurringPeriod = RecurringPeriod.QUARTERLY;
-            }
+            recurringPeriod = RecurringPeriod.valueOf(transactionDto.getPeriod().toUpperCase());
         }
-
 
         Transaction transaction = new Transaction();
         transaction.setAmount(transactionDto.getAmount());
         transaction.setPeriod(recurringPeriod);
-        transaction.setCategory(categoryService.getCategoryById(transactionDto.getCategoryId()));
+
+        if (transactionDto.getCategoryId() != null) {
+            transaction.setCategory(categoryService.getCategoryById(transactionDto.getCategoryId()));
+        }
         transaction.setTransactionParty(transactionDto.getTransactionParty());
         transaction.setCreatedAt(LocalDate.parse(transactionDto.getCreatedAt()));
 
         TransactionAccount transactionAccount = new TransactionAccount();
-        transactionAccount.setAccount(accountService.getAccountById(transactionDto.getAccountId()));
+        transactionAccount.setAccount(accountService.getAccountById(transactionDto.getFirstAccountId()));
         transactionAccount.setTransaction(transaction);
 
-        TransactionType transactionType = null;
-        if (transactionDto.getTransactionType().equals("INCOME")) {
-            transactionType = TransactionType.INCOME;
-        }
-        if (transactionDto.getTransactionType().equals("EXPENSE")) {
-            transactionType = TransactionType.EXPENSE;
-        }
+        TransactionType transactionType = transactionDto.getIsIncome() ? TransactionType.INCOME : TransactionType.EXPENSE;
         transactionAccount.setTransactionType(transactionType);
+        List<TransactionAccount> transactionAccounts = List.of(transactionAccount);
 
-        return Pair.of(transaction, transactionAccount);
+        if (transactionDto.getOptionalAccountId() != null) {
+            TransactionAccount optionalTransactionAccount = new TransactionAccount();
+            optionalTransactionAccount.setAccount(accountService.getAccountById(transactionDto.getFirstAccountId()));
+            optionalTransactionAccount.setTransaction(transaction);
+            optionalTransactionAccount.setTransactionType(transactionType);
+
+            transactionAccounts.add(optionalTransactionAccount);
+        }
+
+        return Pair.of(transaction, transactionAccounts);
+    }
+
+    public static TransactionDto toDto(Transaction transaction) {
+        return null;
     }
 }

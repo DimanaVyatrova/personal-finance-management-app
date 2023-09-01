@@ -14,22 +14,23 @@ import java.util.List;
 @Service
 public class TransactionService {
     private final TransactionRepository transactionRepository;
-    private final TransactionAccountRepository transactionAccountRepository;
+    private final TransactionAccountService transactionAccountService;
 
     @Autowired
     public TransactionService(TransactionRepository transactionRepository,
-                              TransactionAccountRepository transactionAccountRepository) {
+                              TransactionAccountService transactionAccountService) {
         this.transactionRepository = transactionRepository;
-        this.transactionAccountRepository = transactionAccountRepository;
+        this.transactionAccountService = transactionAccountService;
     }
 
-    public void createTransaction(Pair<Transaction, TransactionAccount> transaction) {
+    public void createTransaction(Pair<Transaction, List<TransactionAccount>> transaction) {
         transactionRepository.save(transaction.getFirst());
-        transaction.getSecond().setId(new TransactionAccountKey(transaction.getFirst().getId(), transaction.getSecond().getAccount().getId()));
-        transactionAccountRepository.save(transaction.getSecond());
+        transaction.getSecond().forEach(transactionAccount -> {transactionAccountService.save(transactionAccount);});
     }
 
     public List<Transaction> getTransactions() {
         return transactionRepository.findAll();
     }
+
+
 }

@@ -1,0 +1,21 @@
+package com.example.finalproject.service;
+
+import com.example.finalproject.model.transaction.TransactionAccount;
+import com.example.finalproject.repository.TransactionAccountRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class TransactionAccountService {
+    private final TransactionAccountRepository transactionAccountRepository;
+
+    @Autowired
+    public TransactionAccountService(TransactionAccountRepository transactionAccountRepository) {
+        this.transactionAccountRepository = transactionAccountRepository;
+    }
+
+
+    public void save(TransactionAccount transactionAccount) {
+        transactionAccountRepository.save(transactionAccount);
+    }
+}
