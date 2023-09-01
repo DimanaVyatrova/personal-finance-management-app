@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {GOALS} from "../mock-models-data/mock-goals";
+import {GOALS} from "../../../mock-models-data/mock-goals";
 
 @Component({
   selector: 'app-saving-account-form',

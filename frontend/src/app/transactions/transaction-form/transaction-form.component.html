@@ -3,7 +3,7 @@
     <h1>New Transaction</h1>
   </mat-card-title>
   <mat-card-content>
-    <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()" id="transactionForm">
 
       <mat-form-field floatLabel="always">
         <mat-label>Amount</mat-label>

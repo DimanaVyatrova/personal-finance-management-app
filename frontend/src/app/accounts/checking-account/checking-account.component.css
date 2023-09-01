@@ -6,15 +6,12 @@
   justify-content: center;
 }
 
+app-account-details {
+  width: 100%;
+}
+
 .vaults-container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-
-app-transactions {
-  width: 100%;
-}
-
-
-

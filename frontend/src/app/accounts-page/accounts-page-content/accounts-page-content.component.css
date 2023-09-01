@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 6rem;
+}
+
+app-sidebar {
+  width: 23%;
+}
+
+.content {
+  flex: 1;
+}

@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {GOALS} from "../mock-models-data/mock-goals";
-import {ACCOUNTS} from "../mock-models-data/mock-accounts";
-import {CATEGORIES} from "../mock-models-data/mock-categories";
-import {PERIODS} from "../mock-models-data/mock-periods";
-import {Category} from "../models/category";
-import {Period} from "../models/period";
-import {Account} from "../models/account";
+import {GOALS} from "../../mock-models-data/mock-goals";
+import {ACCOUNTS} from "../../mock-models-data/mock-accounts";
+import {CATEGORIES} from "../../mock-models-data/mock-categories";
+import {PERIODS} from "../../mock-models-data/mock-periods";
+import {Category} from "../../models/category";
+import {Period} from "../../models/period";
+import {Account} from "../../models/account";
 
 @Component({
   selector: 'app-transaction-form',
   templateUrl: './transaction-form.component.html',
-  styleUrls: ['./transaction-form.component.css', '../form.css']
+  styleUrls: ['./transaction-form.component.css', '../../accounts/forms/form.css']
 })
 export class TransactionFormComponent {
 
