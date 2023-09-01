@@ -36,6 +36,27 @@ export class BudgetFormComponent {
     this.success = false;
   }
 
+  calculatePeriodEnd() {
+    let date = new Date(this.periodStart);
+    if (this.reccuringPeriod == 'ANNUALLY') {
+      date.setFullYear(date.getFullYear() + 1);
+    }
+
+    if (this.reccuringPeriod == 'MONTHLY') {
+      date.setMonth(date.getMonth() + 1);
+    }
+
+    if (this.reccuringPeriod == 'WEEKLY') {
+      date.setDate(date.getDate() + 7);
+    }
+
+    if (this.reccuringPeriod == 'QUARTERLY') {
+      date.setMonth(date.getMonth() + 3);
+    }
+
+    return date.toISOString().split('T')[0];
+  }
+
   onSubmit(data : any) {
     console.log(data);
     this.errorExists = false;
@@ -46,7 +67,11 @@ export class BudgetFormComponent {
     this.currentAmount = data.limitAmount;
     this.reccuringPeriod = data.type;
     this.periodStart = data.startDate;
-    this.periodEnd = "2023-09-09";
+
+    //calculate end date
+    this.periodEnd = this.calculatePeriodEnd();
+    console.log('date '+ this.periodEnd);
+
     this.inputCategories.forEach((elem) => this.categories.push(elem.name))
     console.log('Categories ' + this.categories);
 
@@ -73,6 +98,7 @@ export class BudgetFormComponent {
 
   }
 
+  //Categories Chips Input Field
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   inputCategories: Category[] = [];

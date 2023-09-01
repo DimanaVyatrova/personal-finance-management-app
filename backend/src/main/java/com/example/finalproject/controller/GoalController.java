@@ -42,6 +42,11 @@ public class GoalController {
         return goalMapper.toDto(goalService.getGoalById(id));
     }
 
+    /*@GetMapping("transactions/pay/{name}")
+    public Double getTransactionsForPayGoalByPayee(@PathVariable String name) {
+
+    }*/
+
     @PutMapping()
     public void updateGoal(@RequestBody GoalDto goalDto) {
         User user = userService.getUserById(goalDto.getUserId());
