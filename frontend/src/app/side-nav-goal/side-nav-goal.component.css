@@ -1,0 +1,26 @@
+app-side-navigator, .menu {
+  display: flex;
+  width: 200px
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+  gap: 80px;
+  margin: 60px auto auto;
+}
+
+app-goal {
+  flex-grow: 3;
+}
+
+app-goal-form, .form {
+  flex-grow: 3;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+}

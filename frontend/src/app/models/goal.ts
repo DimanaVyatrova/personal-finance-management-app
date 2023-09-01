@@ -1,4 +1,11 @@
 export interface Goal {
-  name: string;
-  id: number;
+  //id: number;
+  goalType : string;
+  currentAmount : number;
+  goalAmount : number;
+  name : string;
+  periodStart : string;
+  payee : string;
+  userId : number;
+  savingsAccountName : string;
 }
