@@ -29,7 +29,6 @@ import {MatButtonModule} from "@angular/material/button";
 import { CheckingAccountComponent } from './accounts/checking-account/checking-account.component';
 import { AccountsModule } from './accounts/accounts.module';
 import { TransactionsModule } from './transactions/transactions.module';
-import { AccountDetailsComponent } from './accounts/account-details/account-details.component';
 import { AccountsPageContentComponent } from './accounts-page/accounts-page-content/accounts-page-content.component';
 import { AccountsPageModule } from './accounts-page/accounts-page.module';
 
@@ -38,22 +37,20 @@ import { AccountsPageModule } from './accounts-page/accounts-page.module';
   declarations: [
     AppComponent,
     NavbarComponent,
-    SidebarComponent,
-    VaultComponent,
-    CheckingAccountFormComponent,
-    InvestmentAccountFormComponent,
-    SavingAccountFormComponent,
-    InvestmentAccountComponent,
-    TransactionFormComponent,
-    CheckingAccountComponent,
-    AccountDetailsComponent,
-    AccountsPageContentComponent,
+    // SidebarComponent,
+    // VaultComponent,
+    // CheckingAccountFormComponent,
+    // InvestmentAccountFormComponent,
+    // SavingAccountFormComponent,
+    // InvestmentAccountComponent,
+    // TransactionFormComponent,
+    // CheckingAccountComponent,
+    // AccountsPageContentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
-    AddButtonComponent,
     BrowserAnimationsModule,
     MatTableModule,
     MatFormFieldModule,
@@ -61,7 +58,7 @@ import { AccountsPageModule } from './accounts-page/accounts-page.module';
     MatInputModule,
     TransactionsTableComponent,
     MatCardModule,
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
     MatSelectModule,
     MatSlideToggleModule,
     MatChipsModule,
@@ -69,9 +66,12 @@ import { AccountsPageModule } from './accounts-page/accounts-page.module';
     MatButtonModule,
     AccountsModule,
     TransactionsModule,
-    AccountsPageModule
+    AccountsPageModule,
+    AddButtonComponent
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
