@@ -85,7 +85,7 @@ savings and investment accounts as well as new transactions.
 
 ## Dependencies
 
-## Frontend
+### Frontend
 <pre>
     "@angular/animations": "^16.2.0",
     "@angular/cdk": "^16.2.1",
@@ -101,7 +101,7 @@ savings and investment accounts as well as new transactions.
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"</pre>
 
-### Angular dev dependencies
+#### Angular dev dependencies
  <pre>
     "@angular-devkit/build-angular": "^16.2.0",
     "@angular/cli": "~16.2.0",
