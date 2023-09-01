@@ -44,7 +44,7 @@ We went through many iterations until the requirements were clarified. The proto
 illustrates only the **functionalities** (UX design) of the app not its **visual design** (UI design).
 
 ## Implementation :factory:
- The project is divided in two folders - frontend and backend.
+ The project is divided into two folders - frontend and backend.
 The backend is implemented using Java and Spring Boot. For the frontend we have used Angular.
 
 ### Backend :abacus:
@@ -79,4 +79,38 @@ savings and investment accounts as well as new transactions.
 #### Goals Page
  The goals page has a very similar functionality to the budgets page. Users can
  view, add and delete their goals.
+
 ## Database
+
+
+## Dependencies
+
+## Frontend
+<pre>
+    "@angular/animations": "^16.2.0",
+    "@angular/cdk": "^16.2.1",
+    "@angular/common": "^16.2.0",
+    "@angular/compiler": "^16.2.0",
+    "@angular/core": "^16.2.0",
+    "@angular/forms": "^16.2.0",
+    "@angular/material": "^16.2.1",
+    "@angular/platform-browser": "^16.2.0",
+    "@angular/platform-browser-dynamic": "^16.2.0",
+    "@angular/router": "^16.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0"</pre>
+
+### Angular dev dependencies
+ <pre>
+    "@angular-devkit/build-angular": "^16.2.0",
+    "@angular/cli": "~16.2.0",
+    "@angular/compiler-cli": "^16.2.0",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.1.3"</pre>   
