@@ -24,4 +24,12 @@ public class TransactionAccountService {
     public List<Long> findTransactionIdsByAccountId(Long accountId) {
         return transactionAccountRepository.findAllByAccountIdIs(accountId);
     }
+
+    public void update(TransactionAccount transactionAccount) {
+//        TransactionAccount before = transactionAccountRepository
+//            .findTransactionAccountByAccount_IdAndTransactionId(transactionAccount.getAccount().getId(),
+//                transactionAccount.getTransaction().getId());
+//        transactionAccount.setId(before.getId());
+//        transactionAccountRepository.save(transactionAccount);
+    }
 }

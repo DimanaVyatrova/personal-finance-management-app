@@ -17,13 +17,6 @@ public class TransactionController {
     private TransactionService transactionService;
     private TransactionMapper transactionMapper;
 
-//    @GetMapping
-//    public List<TransactionDto> getTransactions() {
-//        return transactionService.getTransactions()
-//            .stream()
-//            .map(TransactionMapper::toDto)
-//            .toList();
-//    }
 
     @GetMapping
     public List<TransactionDto> getTransactionsInAccount(@RequestParam Long accountId) {
@@ -41,5 +34,12 @@ public class TransactionController {
     @DeleteMapping("{id}")
     public void deleteTransaction(@PathVariable Long id) {
         transactionService.deleteTransaction(id);
+    }
+
+    @PutMapping("{id}")
+    public void updateTransaction(@PathVariable Long id, @RequestBody TransactionDto transactionDto) {
+//        Pair<Transaction, List<TransactionAccount>> toEntity = transactionMapper.toEntity(transactionDto);
+//        toEntity.getFirst().setId(id);
+//        transactionService.updateTransaction(toEntity);
     }
 }
