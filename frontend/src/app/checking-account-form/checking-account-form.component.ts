@@ -4,7 +4,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 @Component({
   selector: 'app-checking-account-form',
   templateUrl: './checking-account-form.component.html',
-  styleUrls: ['./checking-account-form.component.css', '../account-form.css']
+  styleUrls: ['./checking-account-form.component.css', '../form.css']
 })
 export class CheckingAccountFormComponent {
   checkingAccountName: string | undefined | null;

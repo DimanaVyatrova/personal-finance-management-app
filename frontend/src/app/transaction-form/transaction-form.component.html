@@ -1,0 +1,72 @@
+<mat-card>
+  <mat-card-title>
+    <h1>New Transaction</h1>
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field floatLabel="always">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" class="example-right-align" formControlName="amount" required>
+        <span matTextPrefix>$&nbsp;</span>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Transaction Party</mat-label>
+        <input matInput formControlName="transactionParty" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let category of categories" [value]="category.name">
+            {{category.name}}
+          </mat-option>
+        </mat-select>
+<!--        <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>-->
+<!--        <mat-hint>{{animalControl.value?.sound}}</mat-hint>-->
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Recurring Period</mat-label>
+        <mat-select formControlName="recurringPeriod">
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let period of periods" [value]="period.value">
+            {{period.value}}
+          </mat-option>
+        </mat-select>
+        <!--        <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>-->
+        <!--        <mat-hint>{{animalControl.value?.sound}}</mat-hint>-->
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Account</mat-label>
+        <mat-select formControlName="account">
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let account of accounts" [value]="account.id">
+            {{account.name}}
+          </mat-option>
+        </mat-select>
+        <!--        <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>-->
+        <!--        <mat-hint>{{animalControl.value?.sound}}</mat-hint>-->
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Notes</mat-label>
+        <textarea matInput formControlName="notes"></textarea>
+      </mat-form-field>
+
+      <div class="toggler">
+        <span class="labeledBeforeSlide">Expense</span>
+        <mat-slide-toggle formControlName="isIncome">Income</mat-slide-toggle>
+      </div>
+
+      <mat-card-actions>
+        <button mat-raised-button type="submit" class="button">Save</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+
+
+</mat-card>

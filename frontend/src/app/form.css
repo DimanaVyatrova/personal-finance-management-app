@@ -8,3 +8,8 @@ mat-card {
 mat-card-title {
   margin-bottom: 2rem;
 }
+
+mat-card-actions {
+  width: 100%;
+  justify-content: center;
+}

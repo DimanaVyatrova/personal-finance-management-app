@@ -5,7 +5,7 @@ import {GOALS} from "../mock-models-data/mock-goals";
 @Component({
   selector: 'app-saving-account-form',
   templateUrl: './saving-account-form.component.html',
-  styleUrls: ['./saving-account-form.component.css', '../account-form.css']
+  styleUrls: ['./saving-account-form.component.css', '../form.css']
 })
 export class SavingAccountFormComponent {
   savingAccountName: string | undefined | null;
@@ -21,5 +21,6 @@ export class SavingAccountFormComponent {
   onSubmit() {
     this.savingAccountName = this.savingAccountForm.value["name"];
     this.savingAccountId = this.savingAccountForm.value["goal"];
+    console.log(this.savingAccountName);
   }
 }

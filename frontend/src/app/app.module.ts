@@ -23,6 +23,12 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { InvestmentAccountFormComponent } from './investment-account-form/investment-account-form.component';
 import { SavingAccountFormComponent } from './saving-account-form/saving-account-form.component';
 import {MatSelectModule} from "@angular/material/select";
+import { InvestmentAccountComponent } from './investment-account/investment-account.component';
+import { TransactionFormComponent } from './transaction-form/transaction-form.component';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatChipsModule} from "@angular/material/chips";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -37,6 +43,8 @@ import {MatSelectModule} from "@angular/material/select";
     CheckingAccountFormComponent,
     InvestmentAccountFormComponent,
     SavingAccountFormComponent,
+    InvestmentAccountComponent,
+    TransactionFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,11 @@ import {MatSelectModule} from "@angular/material/select";
     TransactionsTableComponent,
     MatCardModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatChipsModule,
+    MatButtonToggleModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

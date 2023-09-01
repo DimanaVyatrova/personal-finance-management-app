@@ -4,7 +4,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 @Component({
   selector: 'app-investment-account-form',
   templateUrl: './investment-account-form.component.html',
-  styleUrls: ['./investment-account-form.component.css', '../account-form.css']
+  styleUrls: ['./investment-account-form.component.css', '../form.css']
 })
 export class InvestmentAccountFormComponent {
   investmentAccountName: string | undefined | null;
@@ -14,5 +14,6 @@ export class InvestmentAccountFormComponent {
 
   onSubmit() {
     this.investmentAccountName = this.investmentAccountForm.value["name"];
+    console.log(this.investmentAccountName);
   }
 }
