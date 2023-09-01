@@ -22,6 +22,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -42,6 +43,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SavingAccountComponent,
     CheckingAccountComponent,
     InvestmentAccountComponent,
+    SavingAccountFormComponent,
+    InvestmentAccountFormComponent,
+    CheckingAccountFormComponent,
   ],
   imports: [
     CommonModule,
@@ -54,6 +58,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatInputModule,
   ]
 })
 export class AccountsModule { }

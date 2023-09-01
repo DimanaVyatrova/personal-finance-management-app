@@ -6,6 +6,7 @@ import {SidebarComponent} from "./sidebar/sidebar.component";
 import {AccountsPageContentComponent} from "./accounts-page-content/accounts-page-content.component";
 import {AccountsModule} from "../accounts/accounts.module";
 import {AddButtonComponent} from "../add-button/add-button.component";
+import {TransactionsModule} from "../transactions/transactions.module";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {AddButtonComponent} from "../add-button/add-button.component";
     CommonModule,
     AccountsPageRoutingModule,
     AccountsModule,
-    AddButtonComponent
+    AddButtonComponent,
+    TransactionsModule
   ]
 })
 export class AccountsPageModule { }

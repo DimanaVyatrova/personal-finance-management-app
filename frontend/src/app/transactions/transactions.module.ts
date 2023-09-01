@@ -9,10 +9,14 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
   declarations: [
+    TransactionFormComponent
+  ],
+  exports: [
     TransactionFormComponent
   ],
   imports: [
@@ -24,6 +28,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatSlideToggleModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatInputModule,
   ]
 })
 export class TransactionsModule { }

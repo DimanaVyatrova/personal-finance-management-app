@@ -6,7 +6,7 @@ mat-card {
   margin: 2rem 0;
   justify-self: center;
   align-self: center;
-  background-color: #BC9393;
+  /*background-color: #BC9393;*/
 }
 
 mat-card-title {
@@ -25,11 +25,11 @@ mat-card-content, form {
   align-items: center;
 }
 
-/*form {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  align-items: center;*/
-/*}*/
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 mat-form-field {
   width: 50%;
