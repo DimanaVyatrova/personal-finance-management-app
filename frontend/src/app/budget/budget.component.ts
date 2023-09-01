@@ -12,7 +12,7 @@ import { Input } from '@angular/core';
 export class BudgetComponent {
   public data : Budget = {} as Budget;
 
-  @Input() clickedBudgetName : string = 'food';
+  @Input() clickedBudgetName : string ='';
 
   budgetCategories : string[] = [];
   budgetExpenses : number = 0;
@@ -21,9 +21,8 @@ export class BudgetComponent {
   constructor(private budgetService : BudgetService) { }
 
   ngOnInit() {
-    console.log('budget comp ngonint ' + this.clickedBudgetName);
-    this.budgetService.getBudget(1).subscribe((result) => {
-      this.data = result;
+    this.budgetService.getBugets().subscribe((result) => {
+      this.data = result[0];
     });
     console.log(this.data);
   }

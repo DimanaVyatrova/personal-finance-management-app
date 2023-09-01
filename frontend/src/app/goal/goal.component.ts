@@ -13,14 +13,14 @@ export class GoalComponent {
   public data : Goal = {} as Goal;
   percentage : number = 0;
 
-  @Input() clickedGoalName : string = 'Pay Off Car';
+  @Input() clickedGoalName : string = '';
 
   constructor(private goalService : GoalService) { }
 
   ngOnInit() {
     console.log('goal comp ngonint ' + this.clickedGoalName);
-    this.goalService.getGoal(1).subscribe((result) => {
-      this.data = result;
+    this.goalService.getGoals().subscribe((result) => {
+      this.data = result[0];
     });
     console.log(this.data);
   }

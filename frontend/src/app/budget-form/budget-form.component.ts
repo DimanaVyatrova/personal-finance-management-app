@@ -1,7 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {FormGroup,  FormControl} from "@angular/forms";
 import {Budget} from "../models/budget";
 import {BudgetService} from "../services/budget.service";
+import {CategoryService} from "../services/category.service";
+import {LiveAnnouncer} from "@angular/cdk/a11y";
+import {MatChipEditedEvent, MatChipInputEvent} from "@angular/material/chips";
+import {COMMA, ENTER} from "@angular/cdk/keycodes";
+
+export interface Category {
+  name: string;
+}
 
 @Component({
   selector: 'app-budget-form',
@@ -16,21 +24,22 @@ export class BudgetFormComponent {
   periodStart: string = '';
   reccuringPeriod: string = '';
   userId: number = 1;
-  categories : string[] = ['cat1','cat2'];
+  categories : string[] = [];
+  allCategories : string[] = [];
+  errorMsg : string = 'The following categories already exist, you cant use them: ';
+  errorExists : boolean = false;
+  success : boolean = false;
 
-  category = new FormControl('');
+  constructor(private budgetService : BudgetService, private categoryService : CategoryService) { }
 
-  selectedCategories = new Set<string>();
-
-  constructor(private budgetService : BudgetService) { }
-
-  onCategoryOptionClick(category) {
-    this.selectedCategories.add(category);
-    console.log(this.selectedCategories);
+  ngOnInit() {
+    this.success = false;
   }
 
   onSubmit(data : any) {
     console.log(data);
+    this.errorExists = false;
+    this.errorMsg= 'The following categories already exist, you cant use them: ';
     this.name = data.name;
     this.userId = 1;
     this.limitAmount = data.limitAmount;
@@ -38,9 +47,73 @@ export class BudgetFormComponent {
     this.reccuringPeriod = data.type;
     this.periodStart = data.startDate;
     this.periodEnd = "2023-09-09";
+    this.inputCategories.forEach((elem) => this.categories.push(elem.name))
+    console.log('Categories ' + this.categories);
+
+    this.categoryService.getAllCategoryNames().subscribe((res) => {
+      res.forEach((cat) => {
+        if (this.categories.includes(cat)) {
+          this.errorMsg += '[' + cat + ']' +' ';
+          this.errorExists = true;
+        }
+      });
+      console.log('errorExists in lambda ' + this.errorExists);
+      if (!this.errorExists) {
+        this.budgetService.addBudget(this.currentAmount, this.limitAmount, this.name, this.periodEnd,
+          this.periodStart, this.reccuringPeriod, this.userId, this.categories);
+        this.success = true;
+        console.log('SEND POST');
+      } else {
+        console.log('in else');
+        this.categories = [];
+        this.inputCategories = [];
+      }
+    });
 
 
-    this.budgetService.addBudget(this.currentAmount, this.limitAmount, this.name, this.periodEnd,
-      this.periodStart, this.reccuringPeriod, this.userId, Array.from(this.selectedCategories));
+  }
+
+  addOnBlur = true;
+  readonly separatorKeysCodes = [ENTER, COMMA] as const;
+  inputCategories: Category[] = [];
+
+  announcer = inject(LiveAnnouncer);
+
+  add(event: MatChipInputEvent): void {
+    const value = (event.value || '').trim();
+
+    // Add our fruit
+    if (value) {
+      this.inputCategories.push({name: value});
+    }
+
+    // Clear the input value
+    event.chipInput!.clear();
+  }
+
+  remove(fruit: Category): void {
+    const index = this.inputCategories.indexOf(fruit);
+
+    if (index >= 0) {
+      this.inputCategories.splice(index, 1);
+
+      this.announcer.announce(`Removed ${fruit}`);
+    }
+  }
+
+  edit(fruit: Category, event: MatChipEditedEvent) {
+    const value = event.value.trim();
+
+    // Remove fruit if it no longer has a name
+    if (!value) {
+      this.remove(fruit);
+      return;
+    }
+
+    // Edit existing fruit
+    const index = this.inputCategories.indexOf(fruit);
+    if (index >= 0) {
+      this.inputCategories[index].name = value;
+    }
   }
 }

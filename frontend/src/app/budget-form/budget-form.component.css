@@ -34,3 +34,17 @@ span {
 .cats {
   margin-bottom: 20px;
 }
+
+.error {
+  align-self: center;
+  margin-top: 15px;
+  color: darkred;
+}
+
+.success mat-card-header {
+  background-color: #8daf8d;
+}
+
+.success mat-card {
+  background-color: #b2d0b2;
+}
