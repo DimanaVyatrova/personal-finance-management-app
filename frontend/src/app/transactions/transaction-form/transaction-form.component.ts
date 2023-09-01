@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {GOALS} from "../../mock-models-data/mock-goals";
 import {ACCOUNTS} from "../../mock-models-data/mock-accounts";
 import {CATEGORIES} from "../../mock-models-data/mock-categories";
 import {PERIODS} from "../../mock-models-data/mock-periods";
