@@ -1,6 +1,7 @@
 package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.TransactionDto;
+import com.example.finalproject.mapper.TransactionMapper;
 import com.example.finalproject.model.Transaction;
 import com.example.finalproject.service.TransactionService;
 import lombok.AllArgsConstructor;
@@ -14,16 +15,33 @@ import java.util.List;
 @RestController
 @RequestMapping("transactions")
 public class TransactionController {
-    TransactionService transactionService;
+    private TransactionService transactionService;
+    private TransactionMapper transactionMapper;
 
-    @GetMapping("{id}")
-    //List<TransactionDto>
-    public String getTransactionById(@PathVariable Long id) {
-        return transactionService.get(id);
+
+    @GetMapping
+    public List<TransactionDto> getTransactionsInAccount(@RequestParam Long accountId) {
+        return transactionService.getTransactionsInAccount(accountId)
+            .stream()
+            .map(transaction -> TransactionMapper.toDto(transaction, accountId))
+            .toList();
     }
 
     @PostMapping()
-    public String addTransaction (@RequestBody TransactionDto transactionDto) {
-        return transactionService.create(transactionDto);
+    public void createTransaction (@RequestBody TransactionDto transactionDto) {
+        transactionService.createTransaction(transactionMapper.toEntity(transactionDto));
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteTransaction(@PathVariable Long id) {
+        transactionService.deleteTransaction(id);
+    }
+
+    @PutMapping("{id}")
+    public void updateTransaction(@PathVariable Long id, @RequestBody TransactionDto transactionDto) {
+//        Pair<Transaction, List<TransactionAccount>> toEntity = transactionMapper.toEntity(transactionDto);
+//        toEntity.getFirst().setId(id);
+//        transactionService.updateTransaction(toEntity);
+
     }
 }

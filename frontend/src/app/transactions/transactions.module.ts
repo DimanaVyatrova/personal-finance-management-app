@@ -1,0 +1,34 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { TransactionsRoutingModule } from './transactions-routing.module';
+import {TransactionsTableComponent} from "./transactions-table/transactions-table.component";
+import {TransactionFormComponent} from "./transaction-form/transaction-form.component";
+import {MatCardModule} from "@angular/material/card";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+
+
+@NgModule({
+  declarations: [
+    TransactionFormComponent
+  ],
+  exports: [
+    TransactionFormComponent
+  ],
+  imports: [
+    CommonModule,
+    TransactionsRoutingModule,
+    ReactiveFormsModule,
+    TransactionsTableComponent,
+    MatCardModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+  ]
+})
+export class TransactionsModule { }

@@ -1,0 +1,27 @@
+#transactionForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+mat-form-field {
+  width: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+:host ::ng-deep .mdc-switch__icons{
+  display:none!important;
+}
+
+.labeledBeforeSlide {
+  vertical-align: bottom;
+  margin-right: .3rem;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.toggler {
+  margin: 1rem;
+}

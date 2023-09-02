@@ -1,4 +1,8 @@
 package com.example.finalproject.repository;
 
-public class GoalRepository {
+import com.example.finalproject.model.goal.Goal;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface GoalRepository extends JpaRepository<Goal, Long> {
+    Goal findByName(String name);
 }

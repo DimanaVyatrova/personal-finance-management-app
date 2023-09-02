@@ -1,0 +1,15 @@
+<!--app-navigation></app-navigation-->
+<div class="container">
+  <router-outlet></router-outlet>
+  <div class="side">
+    <app-side-navigator (clickedBudgetNameEvent)="setClickedGoalName($event)" [type]="type"></app-side-navigator>
+    <!--button mat-fab extended class="add-button" (click)="onGoalClick()">
+      <mat-icon>add</mat-icon>
+      Add a Goal
+    </button-->
+    <app-add-button (click)="onGoalClick()" [name]="type"></app-add-button>
+  </div>
+  <app-goal *ngIf="addGoalClicked == false" [clickedGoalName]="clickedGoalName"></app-goal>
+  <!--ng-template #elseBlock><app-budget-form></app-budget-form></ng-template-->
+  <app-goal-form *ngIf="addGoalClicked == true"></app-goal-form>
+</div>

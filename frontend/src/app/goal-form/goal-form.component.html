@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add a New Budget</mat-card-title>
+  </mat-card-header>
+  <form form #addGoal = "ngForm" (ngSubmit) = "onSubmit(addGoal.value)" >
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input name="name" ngModel matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Goal Amount</mat-label>
+      <input name="goalAmount" ngModel matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Type</mat-label>
+      <mat-select [formControl]="type" name="type" ngModel>
+        <mat-option value="PAY">PAY</mat-option>
+        <mat-option value="SAVE">SAVE</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="type.value == 'PAY'">
+      <mat-label>Payee</mat-label>
+      <input name="payee" ngModel matInput>
+    </mat-form-field>
+    <mat-form-field *ngIf="type.value == 'SAVE'">
+      <mat-label>Savings Account</mat-label>
+      <input name="savingsAccount" ngModel matInput>
+    </mat-form-field>
+    <button mat-flat-button color="accent" type="submit">Add the Goal</button>
+  </form>
+</mat-card>
+

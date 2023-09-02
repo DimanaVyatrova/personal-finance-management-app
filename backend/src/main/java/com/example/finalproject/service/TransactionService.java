@@ -1,25 +1,43 @@
 package com.example.finalproject.service;
 
-import com.example.finalproject.dto.AccountDto;
-import com.example.finalproject.dto.TransactionDto;
+import com.example.finalproject.model.transaction.Transaction;
+import com.example.finalproject.model.transaction.TransactionAccount;
 import com.example.finalproject.repository.TransactionRepository;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-@AllArgsConstructor
 public class TransactionService {
-    private TransactionRepository transactionRepository;
+    private final TransactionRepository transactionRepository;
+    private final TransactionAccountService transactionAccountService;
 
-    public String create(TransactionDto transactionDto) {
-        return transactionRepository.create(transactionDto);
+    @Autowired
+    public TransactionService(TransactionRepository transactionRepository,
+                              TransactionAccountService transactionAccountService) {
+        this.transactionRepository = transactionRepository;
+        this.transactionAccountService = transactionAccountService;
     }
 
-    public String get(Long id) {
-        return transactionRepository.get(id);
+    public void createTransaction(Pair<Transaction, List<TransactionAccount>> transaction) {
+        transactionRepository.save(transaction.getFirst());
+        transaction.getSecond().forEach(transactionAccount -> {transactionAccountService.save(transactionAccount);});
     }
 
-    public String getAccountTransactionsById(Long id) {
-        return transactionRepository.getAccountTransactionsById(id);
+
+    public List<Transaction> getTransactionsInAccount(Long accountId) {
+        return transactionRepository.findAllByIdIn(transactionAccountService.findTransactionIdsByAccountId(accountId));
+    }
+
+    public void deleteTransaction(Long id) {
+        transactionRepository.deleteById(id);
+    }
+
+    public void updateTransaction(Pair<Transaction, List<TransactionAccount>> toEntity) {
+//        transactionRepository.save(toEntity.getFirst());
+//        toEntity.getSecond().forEach(transactionAccount -> transactionAccountService.update(transactionAccount));
+
     }
 }

@@ -1,9 +1,11 @@
 package com.example.finalproject.repository;
 
-import com.example.finalproject.dto.TransactionDto;
+import com.example.finalproject.model.transaction.Transaction;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TransactionRepository {
-    public String create(TransactionDto transactionDto);
-    public String get(Long id);
-    public String getAccountTransactionsById(Long accountId);
+import java.util.List;
+
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
+    List<Transaction> findAllByIdIn(List<Long> ids);
+
 }
