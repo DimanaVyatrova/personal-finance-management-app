@@ -81,8 +81,7 @@ savings and investment accounts as well as new transactions.
  view, add and delete their goals.
 
 ## Database
-
-
+![alt text](https://scontent.fsof9-1.fna.fbcdn.net/v/t1.15752-9/372409789_223892986979551_3570335055766580609_n.png?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=C-KtzmkpGZsAX8iNHqR&_nc_ht=scontent.fsof9-1.fna&oh=03_AdTsi6x3ltOSFE4z23HFwaRmGQoXRfM9_S910OYCv9gZBQ&oe=651ADD2C)
 ## Dependencies
 
 ### Frontend
