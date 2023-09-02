@@ -3,11 +3,12 @@ package com.example.finalproject.controller;
 import com.example.finalproject.dto.AccountDto;
 import com.example.finalproject.mapper.AccountMapper;
 import com.example.finalproject.service.AccountService;
+import com.example.finalproject.service.TransactionService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
 
 @Slf4j
 @AllArgsConstructor
@@ -17,6 +18,7 @@ public class AccountController {
 
     private AccountService accountService;
     private AccountMapper accountMapper;
+
 
     @PostMapping()
     public void createAccount(@RequestBody AccountDto accountDto) {
@@ -46,6 +48,11 @@ public class AccountController {
     @DeleteMapping("{id}")
     public void deleteAccountById(@PathVariable Long id) {
         accountService.deleteAccountById(id);
+    }
+
+    @GetMapping("/{id}")
+    public String getAccountById(@PathVariable Long id) {
+        return accountService.get(id);
     }
 
 }

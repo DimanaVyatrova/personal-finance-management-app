@@ -7,11 +7,10 @@ import com.example.finalproject.model.User;
 import com.example.finalproject.service.BudgetService;
 import com.example.finalproject.service.CategoryService;
 import com.example.finalproject.service.UserService;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
+
 
 @Slf4j
 @AllArgsConstructor

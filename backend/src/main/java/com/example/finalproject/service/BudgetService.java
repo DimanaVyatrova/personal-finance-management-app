@@ -1,6 +1,3 @@
-package com.example.finalproject.service;
-
-
 import com.example.finalproject.model.Budget;
 import com.example.finalproject.model.Category;
 import com.example.finalproject.model.transaction.Transaction;
@@ -92,3 +89,4 @@ public class BudgetService {
         budgetRepository.deleteById(getBudgetByName(name).getId());
     }
 }
+

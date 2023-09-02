@@ -40,5 +40,4 @@ public class AccountService {
     public void deleteAccountById(Long id) {
         accountRepository.deleteById(id);
     }
-
 }

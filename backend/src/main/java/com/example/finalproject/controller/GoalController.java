@@ -57,5 +57,4 @@ public class GoalController {
     public void deleteGoalByName(@PathVariable String name) {
         goalService.deleteGoalByName(name);
     }
-
 }

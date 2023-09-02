@@ -15,4 +15,5 @@ public class TransactionDto {
     private Long optionalAccountId;
     private String transactionType; //INCOME, EXPENSE
     private Long id;
+
 }

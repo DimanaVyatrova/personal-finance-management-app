@@ -38,5 +38,6 @@ public class TransactionService {
     public void updateTransaction(Pair<Transaction, List<TransactionAccount>> toEntity) {
 //        transactionRepository.save(toEntity.getFirst());
 //        toEntity.getSecond().forEach(transactionAccount -> transactionAccountService.update(transactionAccount));
+
     }
 }

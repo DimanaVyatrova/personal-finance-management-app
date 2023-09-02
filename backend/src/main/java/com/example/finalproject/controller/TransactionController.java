@@ -2,6 +2,7 @@ package com.example.finalproject.controller;
 
 import com.example.finalproject.dto.TransactionDto;
 import com.example.finalproject.mapper.TransactionMapper;
+import com.example.finalproject.model.Transaction;
 import com.example.finalproject.service.TransactionService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -41,5 +42,6 @@ public class TransactionController {
 //        Pair<Transaction, List<TransactionAccount>> toEntity = transactionMapper.toEntity(transactionDto);
 //        toEntity.getFirst().setId(id);
 //        transactionService.updateTransaction(toEntity);
+
     }
 }
