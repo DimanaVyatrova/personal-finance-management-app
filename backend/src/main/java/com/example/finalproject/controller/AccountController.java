@@ -50,9 +50,4 @@ public class AccountController {
         accountService.deleteAccountById(id);
     }
 
-    @GetMapping("/{id}")
-    public String getAccountById(@PathVariable Long id) {
-        return accountService.get(id);
-    }
-
 }

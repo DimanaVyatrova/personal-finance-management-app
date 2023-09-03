@@ -1,7 +1,11 @@
+package com.example.finalproject.service;
+
 import com.example.finalproject.model.Budget;
 import com.example.finalproject.model.Category;
 import com.example.finalproject.model.transaction.Transaction;
 import com.example.finalproject.repository.BudgetRepository;
+import com.example.finalproject.service.CategoryService;
+import com.example.finalproject.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

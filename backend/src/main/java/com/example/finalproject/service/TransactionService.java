@@ -31,6 +31,10 @@ public class TransactionService {
         return transactionRepository.findAllByIdIn(transactionAccountService.findTransactionIdsByAccountId(accountId));
     }
 
+    public List<Transaction> getTransactions() {
+        return transactionRepository.findAll();
+    }
+
     public void deleteTransaction(Long id) {
         transactionRepository.deleteById(id);
     }
